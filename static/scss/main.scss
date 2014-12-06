@@ -1,7 +1,12 @@
+@font-face {
+    font-family: Roboto;
+    src: url(/font/Roboto-Regular.ttf);
+}
 @import "font-awesome";
+
 $header: #3A539B;
 $btn: #373d3f;
-$main-font: 'Roboto', sans-serif;
+$main-font: Roboto, sans-serif;
 
 body {
     background:$header;

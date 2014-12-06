@@ -1,3 +1,8 @@
+@font-face {
+  font-family: Roboto;
+  src: url(/font/Roboto-Regular.ttf);
+}
+
 /*
  *  Font Awesome 4.2.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
@@ -2689,13 +2694,13 @@
   content: "\f20c";
 }
 
-/* line 6, ../scss/main.scss */
+/* line 11, ../scss/main.scss */
 body {
   background: #3a539b;
-  font-family: "Roboto", sans-serif;
+  font-family: Roboto, sans-serif;
 }
 
-/* line 11, ../scss/main.scss */
+/* line 16, ../scss/main.scss */
 header {
   margin: 0 auto;
   padding: 2.5%;
@@ -2703,12 +2708,12 @@ header {
   text-align: right;
 }
 
-/* line 18, ../scss/main.scss */
+/* line 23, ../scss/main.scss */
 .fa-info-circle {
   color: #fff;
 }
 
-/* line 22, ../scss/main.scss */
+/* line 27, ../scss/main.scss */
 h1 {
   color: #fff;
   text-align: center;
@@ -2718,13 +2723,13 @@ h1 {
   padding-bottom: 5%;
 }
 
-/* line 31, ../scss/main.scss */
+/* line 36, ../scss/main.scss */
 #btns {
   text-align: center;
   margin-top: 2em;
 }
 
-/* line 36, ../scss/main.scss */
+/* line 41, ../scss/main.scss */
 .btn {
   display: inline-block;
   padding: 1% 3%;
@@ -2737,7 +2742,7 @@ h1 {
   cursor: pointer;
 }
 
-/* line 48, ../scss/main.scss */
+/* line 53, ../scss/main.scss */
 .btn-crypt {
   margin-left: 2%;
   margin-right: 2%;
@@ -2747,7 +2752,7 @@ h1 {
   background: #373d3f;
   transition: all ease 0.4s;
 }
-/* line 57, ../scss/main.scss */
+/* line 62, ../scss/main.scss */
 .btn-crypt:hover {
   background: #fff;
   border-color: #373d3f;
@@ -2755,7 +2760,7 @@ h1 {
 }
 
 /*** TOOL TIP ***/
-/* line 65, ../scss/main.scss */
+/* line 70, ../scss/main.scss */
 .my-custom-theme {
   border-radius: 5px;
   border: 2px solid #fff;
@@ -2763,9 +2768,9 @@ h1 {
   color: #373d3f;
 }
 
-/* line 71, ../scss/main.scss */
+/* line 76, ../scss/main.scss */
 .my-custom-theme .tooltipster-content {
-  font-family: "Roboto", sans-serif;
+  font-family: Roboto, sans-serif;
   color: #373d3f;
   font-size: 14px;
   line-height: 16px;
@@ -2773,7 +2778,7 @@ h1 {
 }
 
 /*** DROPZONE ***/
-/* line 83, ../scss/main.scss */
+/* line 88, ../scss/main.scss */
 .dropzone,
 .dropzone *,
 .dropzone-previews,
@@ -2783,7 +2788,7 @@ h1 {
   box-sizing: border-box;
 }
 
-/* line 88, ../scss/main.scss */
+/* line 93, ../scss/main.scss */
 .dropzone {
   position: relative;
   border: 1px solid rgba(0, 0, 0, 0.08);
@@ -2796,41 +2801,41 @@ h1 {
   min-height: 300px;
 }
 
-/* line 99, ../scss/main.scss */
+/* line 104, ../scss/main.scss */
 .dropzone.dz-clickable {
   cursor: pointer;
 }
 
-/* line 103, ../scss/main.scss */
+/* line 108, ../scss/main.scss */
 .dropzone.dz-clickable .dz-message,
 .dropzone.dz-clickable .dz-message span {
   cursor: pointer;
 }
 
-/* line 106, ../scss/main.scss */
+/* line 111, ../scss/main.scss */
 .dropzone.dz-clickable * {
   cursor: default;
 }
 
-/* line 109, ../scss/main.scss */
+/* line 114, ../scss/main.scss */
 .dropzone .dz-message {
   opacity: 1;
   -ms-filter: none;
   filter: none;
 }
 
-/* line 114, ../scss/main.scss */
+/* line 119, ../scss/main.scss */
 .dropzone.dz-drag-hover {
   border-color: rgba(0, 0, 0, 0.15);
   background: rgba(0, 0, 0, 0.04);
 }
 
-/* line 118, ../scss/main.scss */
+/* line 123, ../scss/main.scss */
 .dropzone.dz-started .dz-message {
   display: none;
 }
 
-/* line 122, ../scss/main.scss */
+/* line 127, ../scss/main.scss */
 .dropzone .dz-preview,
 .dropzone-previews .dz-preview {
   background: rgba(255, 255, 255, 0.8);
@@ -2842,13 +2847,13 @@ h1 {
   padding: 6px 6px 6px 6px;
 }
 
-/* line 132, ../scss/main.scss */
+/* line 137, ../scss/main.scss */
 .dropzone .dz-preview.dz-file-preview [data-dz-thumbnail],
 .dropzone-previews .dz-preview.dz-file-preview [data-dz-thumbnail] {
   display: none;
 }
 
-/* line 136, ../scss/main.scss */
+/* line 141, ../scss/main.scss */
 .dropzone .dz-preview .dz-details,
 .dropzone-previews .dz-preview .dz-details {
   width: 100px;
@@ -2859,7 +2864,7 @@ h1 {
   margin-bottom: 22px;
 }
 
-/* line 145, ../scss/main.scss */
+/* line 150, ../scss/main.scss */
 .dropzone .dz-preview .dz-details .dz-filename,
 .dropzone-previews .dz-preview .dz-details .dz-filename {
   overflow: hidden;
@@ -2867,7 +2872,7 @@ h1 {
   color: #373d3f;
 }
 
-/* line 151, ../scss/main.scss */
+/* line 156, ../scss/main.scss */
 .dropzone .dz-preview .dz-details img,
 .dropzone-previews .dz-preview .dz-details img {
   position: absolute;
@@ -2877,7 +2882,7 @@ h1 {
   height: 100px;
 }
 
-/* line 159, ../scss/main.scss */
+/* line 164, ../scss/main.scss */
 .dropzone .dz-preview .dz-details .dz-size,
 .dropzone-previews .dz-preview .dz-details .dz-size {
   padding-top: 0.1em;
@@ -2889,25 +2894,25 @@ h1 {
   color: #373d3f;
 }
 
-/* line 169, ../scss/main.scss */
+/* line 174, ../scss/main.scss */
 .dropzone .dz-preview.dz-error .dz-error-mark,
 .dropzone-previews .dz-preview.dz-error .dz-error-mark {
   display: block;
 }
 
-/* line 173, ../scss/main.scss */
+/* line 178, ../scss/main.scss */
 .dropzone .dz-preview.dz-success .dz-success-mark,
 .dropzone-previews .dz-preview.dz-success .dz-success-mark {
   display: block;
 }
 
-/* line 177, ../scss/main.scss */
+/* line 182, ../scss/main.scss */
 .dropzone .dz-preview:hover .dz-details img,
 .dropzone-previews .dz-preview:hover .dz-details img {
   display: none;
 }
 
-/* line 183, ../scss/main.scss */
+/* line 188, ../scss/main.scss */
 .dropzone .dz-preview .dz-success-mark,
 .dropzone-previews .dz-preview .dz-success-mark,
 .dropzone .dz-preview .dz-error-mark,
@@ -2922,19 +2927,19 @@ h1 {
   top: -10px;
 }
 
-/* line 194, ../scss/main.scss */
+/* line 199, ../scss/main.scss */
 .dropzone .dz-preview .dz-success-mark,
 .dropzone-previews .dz-preview .dz-success-mark {
   color: #8cc657;
 }
 
-/* line 198, ../scss/main.scss */
+/* line 203, ../scss/main.scss */
 .dropzone .dz-preview .dz-error-mark,
 .dropzone-previews .dz-preview .dz-error-mark {
   color: #ee162d;
 }
 
-/* line 202, ../scss/main.scss */
+/* line 207, ../scss/main.scss */
 .dropzone .dz-preview .dz-progress,
 .dropzone-previews .dz-preview .dz-progress {
   position: absolute;
@@ -2946,7 +2951,7 @@ h1 {
   display: none;
 }
 
-/* line 212, ../scss/main.scss */
+/* line 217, ../scss/main.scss */
 .dropzone .dz-preview .dz-progress .dz-upload,
 .dropzone-previews .dz-preview .dz-progress .dz-upload {
   display: block;
@@ -2958,13 +2963,13 @@ h1 {
   background-color: #8cc657;
 }
 
-/* line 222, ../scss/main.scss */
+/* line 227, ../scss/main.scss */
 .dropzone .dz-preview.dz-processing .dz-progress,
 .dropzone-previews .dz-preview.dz-processing .dz-progress {
   display: block;
 }
 
-/* line 226, ../scss/main.scss */
+/* line 231, ../scss/main.scss */
 .dropzone .dz-preview .dz-error-message,
 .dropzone-previews .dz-preview .dz-error-message {
   display: none;
@@ -2979,30 +2984,30 @@ h1 {
   z-index: 500;
 }
 
-/* line 239, ../scss/main.scss */
+/* line 244, ../scss/main.scss */
 .dropzone .dz-preview:hover.dz-error .dz-error-message,
 .dropzone-previews .dz-preview:hover.dz-error .dz-error-message {
   display: block;
 }
 
-/* line 243, ../scss/main.scss */
+/* line 248, ../scss/main.scss */
 .dz-message {
   padding-top: 100px;
   text-transform: uppercase;
 }
 
-/* line 248, ../scss/main.scss */
+/* line 253, ../scss/main.scss */
 .dz-remove {
   color: #373d3f;
   text-decoration: none;
 }
 
-/* line 253, ../scss/main.scss */
+/* line 258, ../scss/main.scss */
 .dz-size, .dz-size > .size {
   text-align: center;
 }
 
-/* line 257, ../scss/main.scss */
+/* line 262, ../scss/main.scss */
 .dz-filename {
   color: #373d3f;
 }
