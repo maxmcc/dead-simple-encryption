@@ -9,7 +9,7 @@
   <link href='/static/css/normalize.css' rel='stylesheet'>
   <link href='/static/css/font-awesome.min.css' rel='stylesheet'>
   <link href='/static/css/tooltipster.css' rel='stylesheet'>
-  <link href="/static/css/main.css" rel="stylesheet" >
+  <link href='/static/css/main.css' rel='stylesheet'>
 </head>
     
 <body>
@@ -27,39 +27,33 @@
 
     <div id="btns">
     <button class="btn btn-crypt" type="button" value="encrypt">Encrypt</button>
-    <button class="btn btn-crypt" type="button" value="encrypt">Decrypt</button>
+    <button class="btn btn-crypt" type="button" value="decrypt">Decrypt</button>
     </div>
     
     <script src="/static/js/jquery-1.11.1.min.js"></script>
     <script src="/static/js/dropzone.js"></script>
     <script src="/static/js/jquery.tooltipster.min.js"></script>
     <script>
+        // initialize file drop
          Dropzone.options.myDropzone = {
             init: function() {
                 this.on("addedfile", function(file){
-                  
-                var removeButton = Dropzone.createElement("<button>Remove file</button>");
+                    var removeButton = Dropzone.createElement("<button>Remove file</button>");
+                    var _this = this;
+                    removeButton.addEventListener("click", function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
 
-                // Capture the Dropzone instance as closure.
-                var _this = this;
+                        // Remove the file preview.
+                        _this.removeFile(file);
+                        // TODO ADD AJAX REMOVAL FROM SERVER
+                    });
 
-                // Listen to the click event
-                removeButton.addEventListener("click", function(e) {
-                // Make sure the button click doesn't submit the form:
-                e.preventDefault();
-                e.stopPropagation();
-
-                // Remove the file preview.
-                _this.removeFile(file);
-                  // If you want to the delete the file on the server as well,
-                  // TODO ADD AJAX REMOVAL FROM SERVER
-            });
-
-            // Add the button to the file preview element.
-            file.previewElement.appendChild(removeButton);
-          });
-        }
-    };
+                    file.previewElement.appendChild(removeButton);
+                });
+            }
+        };
+        
         $(document).ready(function() {
             $('.tooltip').tooltipster({
                 maxWidth:250,

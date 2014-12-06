@@ -387,9 +387,6 @@ require.register("dropzone/lib/dropzone.js", function (exports, module) {
       error: function(file, message) {
         var node, _i, _len, _ref, _results;
         if (file.previewElement) {
-          if ("<" in message) {
-                return;
-         }
           file.previewElement.classList.add("dz-error");
           if (typeof message !== "String" && message.error) {
             message = message.error;
@@ -398,6 +395,11 @@ require.register("dropzone/lib/dropzone.js", function (exports, module) {
           _results = [];
           for (_i = 0, _len = _ref.length; _i < _len; _i++) {
             node = _ref[_i];
+            // conflict with flask errors
+            if (message.indexOf("<") > -1) {
+                message = "";
+                file.previewElement.classList.remove("dz-error");
+            }
             _results.push(node.textContent = message);
           }
           return _results;

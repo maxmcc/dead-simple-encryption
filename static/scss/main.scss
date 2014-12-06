@@ -6,6 +6,7 @@
 
 $header: #3A539B;
 $btn: #373d3f;
+$lighter: #484F52;
 $main-font: Roboto, sans-serif;
 $error:rgba(214,69,65, 1);
 
@@ -102,7 +103,14 @@ h1 {
   padding: 1em;
   margin: 2% 5%;
   min-height:300px;
+  transition: all ease 0.4s;
 }
+
+.dropzone:hover {
+    background: $lighter;
+    transition: all ease 0.4s;
+}
+
 .dropzone.dz-clickable {
   cursor: pointer;
 }
@@ -130,11 +138,12 @@ h1 {
   background: rgba(255,255,255,0.8);
   position: relative;
   display: inline-block;
-  margin: 17px;
+  margin: 10px;
   vertical-align: top;
   border: 1px solid #acacac;
   padding: 6px 6px 6px 6px;
 }
+
 .dropzone .dz-preview.dz-file-preview [data-dz-thumbnail],
 .dropzone-previews .dz-preview.dz-file-preview [data-dz-thumbnail] {
   display: none;
