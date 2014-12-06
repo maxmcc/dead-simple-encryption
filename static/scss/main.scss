@@ -7,6 +7,7 @@
 $header: #3A539B;
 $btn: #373d3f;
 $main-font: Roboto, sans-serif;
+$error:rgba(214,69,65, 1);
 
 body {
     background:$header;
@@ -233,7 +234,7 @@ h1 {
   position: absolute;
   top: -5px;
   left: -20px;
-  background: rgba(214,69,65, 1);
+  background: $error;
   padding: 8px 10px;
   color: #fff;
   min-width: 140px;
@@ -251,7 +252,7 @@ h1 {
 }
 
 .dz-remove {
-    color:$btn;
+    color:$error;
     text-decoration: none;
 }
 
