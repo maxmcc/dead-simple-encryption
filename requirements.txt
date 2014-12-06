@@ -1,5 +1,8 @@
-Cython==0.17.1
-Kivy==1.8.0
-Kivy-Garden==0.1.1
-requests==2.5.0
+Flask==0.10.1
+Jinja2==2.7.1
+MarkupSafe==0.18
+PyInstaller==2.1
+WebUI==0.1.7
+Werkzeug==0.9.4
+itsdangerous==0.23
 wsgiref==0.1.2
