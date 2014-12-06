@@ -1,12 +1,9 @@
-from WebUI import WebUI # Add WebUI to your imports
-from flask import Flask, render_template, request
-
+from flask import Flask
 app = Flask(__name__)
-ui = WebUI(app, debug=True) # Create a WebUI instance
 
 @app.route('/')
-def index():
-    return render_template('base.html')
+def app():
+    return render_template('index.html')
 
 if __name__ == '__main__':
-  ui.run() 
+    app.run()
