@@ -7,8 +7,10 @@ class MyFileDropTarget(wx.FileDropTarget):
 
     def OnDropFiles(self, x, y, filenames):
         self.window.AppendText("%d file(s) dropped at (%d,%d):\n" % (len(filenames), x, y))
+        files = []
         for file in filenames:
             self.window.AppendText("%s\n" % file)
+            files.append(file)
 
 class Frame(wx.Frame):
 
@@ -23,22 +25,22 @@ class Frame(wx.Frame):
         sizer = wx.BoxSizer(wx.VERTICAL)
         sizer.Add(label, 0, wx.ALL, 5)
         sizer.Add(text, 1, wx.EXPAND|wx.ALL, 5)
-        p.SetSizer(sizer)
+                # encryption
+        encrypt = wx.Button(self, -1, 'Encrypt')
+        self.Bind(wx.EVT_BUTTON, self.btn_Press, encrypt)
+        sizer.Add(encrypt, 2, wx.EXPAND, 5)
+
+        decrypt = wx.Button(self, -1, 'Decrypt')
+        self.Bind(wx.EVT_BUTTON, self.btn_Press, decrypt)
+        sizer.Add(decrypt, 3, wx.EXPAND, 5)
+
+        p.SetSizerAndFit(sizer)
+        self.Fit()
 
         dt = MyFileDropTarget(text)
         text.SetDropTarget(dt)
 
-        # encryption
-        encrypt = wx.Button(self, -1, 'Encrypt')
-        self.Bind(wx.EVT_BUTTON, self.btn_Press, encrypt)
-        sizer.Add(encrypt, 0, wx.EXPAND, 0)
 
-        decrypt = wx.Button(self, -1, 'Decrypt')
-        self.Bind(wx.EVT_BUTTON, self.btn_Press, decrypt)
-        sizer.Add(decrypt, 0, wx.EXPAND, 0)
-
-        # # set sizer
-        # sizer.Fit(self)
 
     def btn_Press(self, event):
         val = event.GetEventObject().GetLabel()
