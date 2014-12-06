@@ -15,7 +15,7 @@ class Frame(wx.Frame):
     def __init__(self, *args, **keywords):
 
         wx.Frame.__init__(self, None, title="Drop Target",size=(500,300))
-        p = wx.Panel(self)
+        p = wx.Panel(self, -1)
 
         label = wx.StaticText(p, -1, "Drop some files here:")
         text = wx.TextCtrl(p, -1, "",style=wx.TE_MULTILINE|wx.HSCROLL)
@@ -30,11 +30,11 @@ class Frame(wx.Frame):
 
         # encryption
         encrypt = wx.Button(self, -1, 'Encrypt')
-        self.Bind(wx.EVT_BUTTON, self.btn_Press, encrypt)
+        #self.Bind(wx.EVT_BUTTON, self.btn_Press, encrypt)
         sizer.Add(encrypt, 0, wx.EXPAND, 0)
 
         decrypt = wx.Button(self, -1, 'Decrypt')
-        self.Bind(wx.EVT_BUTTON, self.btn_Press, decrypt)
+        #self.Bind(wx.EVT_BUTTON, self.btn_Press, decrypt)
         sizer.Add(decrypt, 0, wx.EXPAND, 0)
 
         # # set sizer
