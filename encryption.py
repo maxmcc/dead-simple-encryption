@@ -7,7 +7,7 @@ from hmac import *
 
 # def encrypt_file(filename):
 # hard coded private key from os.urandom for this iteration
-cypher_key = '\xc7\xdfK\xb2\xb1^S\xb9' #'abcdefgh'
+cypher_key = '\xc7\xdfK\xb2\xb1^S\xb9'
 obj=DES.new(cypher_key, DES.MODE_ECB)
 plain="Guido van Rossum is a space alien."
 
