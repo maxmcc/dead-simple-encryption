@@ -1,5 +1,5 @@
-import wx
 
+import wx
 
 class Calculator(wx.Frame):
     ''' Class for the top-level frame.
