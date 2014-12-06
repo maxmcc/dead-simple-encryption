@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dead Simple Encryption</title>
+
+  <!--CSS-->
+  <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+  <link href='/static/css/normalize.css' rel='stylesheet'>
+    <link href='/static/css/font-awesome.min.css' rel='stylesheet'>
+    <link href='/static/css/tooltipster.css' rel='stylesheet'>
+  <link rel="stylesheet" href="/static/css/main.css">
+</head>
+    
+<body>
+    <header>
+       <i class="fa fa-info-circle fa-lg ketchup tooltip" title="Simply drop your desired files to the designated area and 'Encrypt' will disguise your files as ___"></i>
+    </header>
+    <h1>Dead Simple Encryption</h1>
+    
+    <form action="/file-upload"
+      class="dropzone"
+      id="my-awesome-dropzone">
+      <div id="previews" class="dropzone-previews"></div>
+    </form>
+
+    
+    <div id="btns">
+    <button class="btn btn-crypt" type="button" value="encrypt">Encrypt</button>
+    <button class="btn btn-crypt" type="button" value="encrypt">Decrypt</button>
+    </div>
+    
+     <script src="/static/js/jquery-1.11.1.min.js"></script>
+    <script src="/static/js/dropzone.js"></script>
+    <script src="/static/js/jquery.tooltipster.min.js"></script>
+    <script>
+         Dropzone.options.myDropzone = {
+            init: function() {
+              this.on("addedfile", function(file){
+
+            // Create the remove button
+            var removeButton = Dropzone.createElement("<button>Remove file</button>");
+
+            // Capture the Dropzone instance as closure.
+            var _this = this;
+
+            // Listen to the click event
+            removeButton.addEventListener("click", function(e) {
+              // Make sure the button click doesn't submit the form:
+              e.preventDefault();
+              e.stopPropagation();
+
+              // Remove the file preview.
+              _this.removeFile(file);
+              // If you want to the delete the file on the server as well,
+              // you can do the AJAX request here.
+            });
+
+            // Add the button to the file preview element.
+            file.previewElement.appendChild(removeButton);
+          });
+        }
+    };
+        $(document).ready(function() {
+            $('.tooltip').tooltipster({
+                maxWidth:250,
+                theme:'my-custom-theme'
+            });
+        });
+    </script>
+</body>
+</html>
