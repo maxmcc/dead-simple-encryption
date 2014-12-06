@@ -1,7 +1,13 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url(../fonts/Roboto-Regular.ttf);
+}
 @import "font-awesome";
+
 $header: #3A539B;
 $btn: #373d3f;
-$main-font: 'Roboto', sans-serif;
+$main-font: Roboto, sans-serif;
+$error:rgba(214,69,65, 1);
 
 body {
     background:$header;
@@ -37,6 +43,7 @@ h1 {
     display: inline-block;
     padding: 1% 3%;
     margin:3% auto;
+    margin-bottom:5%;
     text-align: center;
     text-transform: uppercase;
     font-size: 100%;
@@ -64,7 +71,7 @@ h1 {
 /*** TOOL TIP ***/
 .my-custom-theme {
 	border-radius: 5px; 
-	border: 2px solid #fff;
+	border: 3px solid $btn;
 	background: #fff;
 	color: $btn;
 }
@@ -228,7 +235,7 @@ h1 {
   position: absolute;
   top: -5px;
   left: -20px;
-  background: rgba(214,69,65, 1);
+  background: $error;
   padding: 8px 10px;
   color: #fff;
   min-width: 140px;
@@ -246,7 +253,7 @@ h1 {
 }
 
 .dz-remove {
-    color:$btn;
+    color:$error;
     text-decoration: none;
 }
 
