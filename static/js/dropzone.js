@@ -387,6 +387,9 @@ require.register("dropzone/lib/dropzone.js", function (exports, module) {
       error: function(file, message) {
         var node, _i, _len, _ref, _results;
         if (file.previewElement) {
+          if ("<" in message) {
+                return;
+         }
           file.previewElement.classList.add("dz-error");
           if (typeof message !== "String" && message.error) {
             message = message.error;
