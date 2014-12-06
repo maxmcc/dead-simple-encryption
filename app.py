@@ -7,10 +7,10 @@ class MyFileDropTarget(wx.FileDropTarget):
 
     def OnDropFiles(self, x, y, filenames):
         self.window.AppendText("%d file(s) dropped at (%d,%d):\n" % (len(filenames), x, y))
-        files = []
+        result = []
         for file in filenames:
             self.window.AppendText("%s\n" % file)
-            files.append(file)
+            result.append(file)
 
 class Frame(wx.Frame):
 
@@ -20,7 +20,7 @@ class Frame(wx.Frame):
         p = wx.Panel(self)
 
         label = wx.StaticText(p, -1, "Drop some files here:")
-        text = wx.TextCtrl(p, -1, "",style=wx.TE_MULTILINE|wx.HSCROLL)
+        text = wx.TextCtrl(p, -1, "", size=(500, 100), style=wx.TE_MULTILINE|wx.HSCROLL)
 
         sizer = wx.BoxSizer(wx.VERTICAL)
         sizer.Add(label, 0, wx.ALL, 5)
