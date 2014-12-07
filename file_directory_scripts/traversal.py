@@ -57,4 +57,4 @@ def overFunction(desired_size):
 	sizeDict = {pictureSize: picturesGSSD, \
 				programFileSize: programFilesGSSD, \
 				DocumentsSize: DocumentsGSSD}
-	return (sizeDict[min(pictureSize,programFileSize,DocumentsSize)], min(pictureSize,programFileSize,DocumentsSize))
+	return [sizeDict[min(pictureSize,programFileSize,DocumentsSize)], min(pictureSize,programFileSize,DocumentsSize)]
