@@ -20,7 +20,7 @@ def split_file(filename):
             working_file = open(f, "a+b")
             working_file.write("\n ---INJECTED DATA--- \n")
             re_split = open("splitTest.zip", "a+b")
-            if chunk_size > (file_size - curr_bit):  # last chunk
+            if chunk_size >= (file_size - curr_bit):  # last chunk
                 working_file.write("next = none \n")
                 working_file.write(data[curr_bit:])
                 re_split.write(data[curr_bit:])
@@ -31,8 +31,8 @@ def split_file(filename):
                     working_file.write("--- head --- \n")
                 working_file.write("next = " + files[i + 1] + "\n")
                 working_file.write(
-                    data[int(curr_bit):curr_bit + chunk_size + 1])
-                re_split.write(data[int(curr_bit):curr_bit + chunk_size + 1])
+                    data[curr_bit:curr_bit + chunk_size + 1])
+                re_split.write(data[curr_bit:curr_bit + chunk_size + 1])
                 working_file.close()
                 curr_bit += chunk_size
 
