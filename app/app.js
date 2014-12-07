@@ -61,13 +61,29 @@ app.post('/_upload', function(req, res) {
     args: data
   };
 
-  PythonShell.run('hello.py', options, function (err, results) {
+  PythonShell.run('encrypt.py', options, function (err, results) {
     if (err) throw err;
     console.log('results: %j', results);
   });
 
   res.status(200).end();
+});
+
+app.post('/_decrypt', function(req, res) {
+  var data = req.body.files;
+  var options = {
+    args: data
+  };
+
+  console.log(data);
+
+  PythonShell.run('decrypt.py', options, function (err, results) {
+     if (err) throw err;
+     console.log('results: %j', results);
   });
+
+  res.status(200).end();
+});
 
 // If no routes activated by now, catch the 404 and forward to error handler
 app.use(function(req, res, next) {
