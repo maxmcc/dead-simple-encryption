@@ -1,5 +1,6 @@
 import os
 import shutil
+import random
 
 def flatten():
 	rootDir = os.getcwd()
@@ -16,11 +17,18 @@ def flatten():
 		print "working in " + os.getcwd()
 		#move all files in that directory
 		for file in files:
+			hash = random.getrandbits(32)
+			print hash
 			parentDirectory = os.path.dirname(os.getcwd())
 			fileToMove = os.getcwd() + "/" + file
-
-			shutil.move(fileToMove, parentDirectory)
-			print "moved " + fileToMove + " to " + parentDirectory
+			fileRename, fileExt = file.split(".")
+			fileRename += str(hash)
+			fileToRename = os.getcwd() + "/" + fileRename + "." + fileExt
+			os.rename(fileToMove, fileToRename)
+			
+			
+			shutil.move(fileToRename, parentDirectory)
+			print "moved " + fileToRename + " to " + parentDirectory
 
 		removeDir = os.getcwd()
 		parentDirectory = os.path.dirname(os.getcwd())
