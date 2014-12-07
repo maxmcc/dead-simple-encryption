@@ -15,7 +15,11 @@ router.get('/', function(req, res) {
 //   console.log('results: %j', results);
 // });
 
-  return res.render('index');
+  return res.render('hidden');
+});
+
+router.get('/index', function(req, res) {
+    return res.render('index');
 });
 
 /*router.get('/upload', function(req, res) {
