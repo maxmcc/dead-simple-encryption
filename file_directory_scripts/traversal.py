@@ -1,6 +1,4 @@
 import os
-import platform
-import appdirs
 
 
 def getFolderSize(folder):
@@ -40,8 +38,12 @@ def overFunction(desired_size):
 
 	
 	picturesGSSD = gssd(os.path.expanduser("~/Pictures"), desired_size)
-	programFilesGSSD = gssd("/Applications", desired_size)
 	DocumentsGSSD = gssd(os.path.expanduser("~/Documents"), desired_size)
+	
+	if os.name == "nt":
+		programFilesGSSD = gssd("D:/Program Files", desired_size)
+	elif os.name == "posix":
+			programFilesGSSD = gssd("/Applications", desired_size)
 	try:
 		pictureSize = getFolderSize(picturesGSSD)
 	except:
@@ -58,7 +60,7 @@ def overFunction(desired_size):
 				programFileSize: programFilesGSSD, \
 				DocumentsSize: DocumentsGSSD}
 	print desired_size
-	return sizeDict[min(pictureSize,programFileSize,DocumentsSize)]
+	return (sizeDict[min(pictureSize,programFileSize,DocumentsSize)], min(pictureSize,programFileSize,DocumentsSize))
 	
 
 	
