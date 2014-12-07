@@ -38,10 +38,10 @@ def gssd(root_path, desired_size):
 	return root_path
 def overFunction(desired_size):
 
-		
-	picturesGSSD = gssd("~/Pictures", desired_size)
+	
+	picturesGSSD = gssd(os.path.expanduser("~/Pictures"), desired_size)
 	programFilesGSSD = gssd("/Applications", desired_size)
-	DocumentsGSSD = gssd("~/Documents", desired_size)
+	DocumentsGSSD = gssd(os.path.expanduser("~/Documents"), desired_size)
 	try:
 		pictureSize = getFolderSize(picturesGSSD)
 	except:
