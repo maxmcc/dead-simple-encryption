@@ -1,20 +1,10 @@
+var myDropzone;
+
 // initialize file drop
  Dropzone.options.myDropzone = {
-    autoProcessQueue: false,
+    autoProcessQueue: true,
     init: function() {
-        var submitButton = document.getElementById("#encrypt");
         myDropzone = this; // closure
-
-        submitButton.addEventListener("click", function() {
-            //myDropzone.processQueue(); 
-            console.log("hi");
-            console.log(myDropzone.getAcceptedFiles());
-            var data = {
-                files: myDropzone.getAcceptedFiles(),
-            };
-            $.post(url = '/_upload', data = data);
-        });
-
 
         this.on("addedfile", function(file){
             var removeButton = Dropzone.createElement("<button>Remove file</button>");
@@ -32,3 +22,12 @@
         });
     }
 }
+
+$("#encrypt").click(function() {
+    console.log("hi");
+    console.log(myDropzone.getAcceptedFiles());
+    var data = {
+        files: myDropzone.getAcceptedFiles(),
+        };
+        $.post(url = '/_upload', data = data);
+});
