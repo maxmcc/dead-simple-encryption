@@ -18,6 +18,10 @@ PythonShell.run('hello.py', function (err, results) {
   return res.render('hidden');
 });
 
+router.get('/index', function(req, res) {
+    return res.render('index');
+});
+
 /*router.get('/upload', function(req, res) {
   return;
 });*/
