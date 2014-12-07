@@ -31,20 +31,20 @@ h1 {
     text-align:center;
     font-size:200%;
     margin: 0 1em;
-    padding:3%;
+    padding:1%;
     padding-bottom:5%;
 }
 
 #btns {
     text-align:center;
-    margin-top:2em;
+    margin-top:1.5em;
 }
 
 .btn {
     display: inline-block;
     padding: 1% 3%;
-    margin:3% auto;
-    margin-bottom:5%;
+    margin:0 auto;
+    margin-bottom:1em;
     text-align: center;
     text-transform: uppercase;
     font-size: 100%;
@@ -72,17 +72,17 @@ h1 {
 .btn-pass {
     display:inline;
     margin: 0 0.5em;
-    margin-bottom:0.5em;
-    font-size:100%;
     text-align:center;
+    font-size:80%;
     border:4px solid #fff;
 	border-radius:5px;
 	color: $btn;
 	background: #fff;
 	transition: all ease 0.4s;
+    padding:0.8em;
 
     &:hover {
-        background: rgba(#fff, 0.5);
+        background: rgba(#fff, 0.2);
         border-color:#fff;
         color:#fff;
     }
@@ -112,6 +112,7 @@ h1 {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+
 .dropzone {
   position: relative;
   border: 1px solid rgba(0,0,0,0.08);
@@ -120,9 +121,12 @@ h1 {
   color:#fff;
   text-align:center;
   padding: 1em;
-  margin: 2% 5%;
+  margin: 1% 5%;
   min-height:300px;
+  max-height:300px;
   transition: all ease 0.4s;
+  overflow:scroll;
+  overflow-x: hidden;
 }
 
 .dropzone:hover {
@@ -297,23 +301,23 @@ h1 {
 #password {
     text-align:center;
     display:block;
-    margin-top:2em;
+    margin-top:1.5em;
 }
 
 #input {
     display:inline;
     margin: 0 0.5em;
-    margin-bottom:1.5em;
+    font-size:80%;
     outline:none;
     color:$btn;
-    border:none;
+    border:4px solid #fff;
     border-radius:5px;
-    padding:1em;
+    padding:0.8em;
     text-align:center;
 }
 
 p {
-    margin: 4em auto;
+    margin: 0 auto;
     margin-bottom:1.5em;
     text-align:center;
     color:#fff;

@@ -2719,22 +2719,22 @@ h1 {
   text-align: center;
   font-size: 200%;
   margin: 0 1em;
-  padding: 3%;
+  padding: 1%;
   padding-bottom: 5%;
 }
 
 /* line 38, ../scss/main.scss */
 #btns {
   text-align: center;
-  margin-top: 2em;
+  margin-top: 1.5em;
 }
 
 /* line 43, ../scss/main.scss */
 .btn {
   display: inline-block;
   padding: 1% 3%;
-  margin: 3% auto;
-  margin-bottom: 5%;
+  margin: 0 auto;
+  margin-bottom: 1em;
   text-align: center;
   text-transform: uppercase;
   font-size: 100%;
@@ -2764,18 +2764,18 @@ h1 {
 .btn-pass {
   display: inline;
   margin: 0 0.5em;
-  margin-bottom: 0.5em;
-  font-size: 100%;
   text-align: center;
+  font-size: 80%;
   border: 4px solid #fff;
   border-radius: 5px;
   color: #373d3f;
   background: #fff;
   transition: all ease 0.4s;
+  padding: 0.8em;
 }
 /* line 84, ../scss/main.scss */
 .btn-pass:hover {
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.2);
   border-color: #fff;
   color: #fff;
 }
@@ -2809,7 +2809,7 @@ h1 {
   box-sizing: border-box;
 }
 
-/* line 115, ../scss/main.scss */
+/* line 116, ../scss/main.scss */
 .dropzone {
   position: relative;
   border: 1px solid rgba(0, 0, 0, 0.08);
@@ -2818,52 +2818,55 @@ h1 {
   color: #fff;
   text-align: center;
   padding: 1em;
-  margin: 2% 5%;
+  margin: 1% 5%;
   min-height: 300px;
+  max-height: 300px;
   transition: all ease 0.4s;
+  overflow: scroll;
+  overflow-x: hidden;
 }
 
-/* line 128, ../scss/main.scss */
+/* line 132, ../scss/main.scss */
 .dropzone:hover {
   background: #484f52;
   transition: all ease 0.4s;
 }
 
-/* line 133, ../scss/main.scss */
+/* line 137, ../scss/main.scss */
 .dropzone.dz-clickable {
   cursor: pointer;
 }
 
-/* line 137, ../scss/main.scss */
+/* line 141, ../scss/main.scss */
 .dropzone.dz-clickable .dz-message,
 .dropzone.dz-clickable .dz-message span {
   cursor: pointer;
 }
 
-/* line 140, ../scss/main.scss */
+/* line 144, ../scss/main.scss */
 .dropzone.dz-clickable * {
   cursor: default;
 }
 
-/* line 143, ../scss/main.scss */
+/* line 147, ../scss/main.scss */
 .dropzone .dz-message {
   opacity: 1;
   -ms-filter: none;
   filter: none;
 }
 
-/* line 148, ../scss/main.scss */
+/* line 152, ../scss/main.scss */
 .dropzone.dz-drag-hover {
   border-color: rgba(0, 0, 0, 0.15);
   background: rgba(0, 0, 0, 0.04);
 }
 
-/* line 152, ../scss/main.scss */
+/* line 156, ../scss/main.scss */
 .dropzone.dz-started .dz-message {
   display: none;
 }
 
-/* line 156, ../scss/main.scss */
+/* line 160, ../scss/main.scss */
 .dropzone .dz-preview,
 .dropzone-previews .dz-preview {
   background: rgba(255, 255, 255, 0.8);
@@ -2875,13 +2878,13 @@ h1 {
   padding: 6px 6px 6px 6px;
 }
 
-/* line 167, ../scss/main.scss */
+/* line 171, ../scss/main.scss */
 .dropzone .dz-preview.dz-file-preview [data-dz-thumbnail],
 .dropzone-previews .dz-preview.dz-file-preview [data-dz-thumbnail] {
   display: none;
 }
 
-/* line 171, ../scss/main.scss */
+/* line 175, ../scss/main.scss */
 .dropzone .dz-preview .dz-details,
 .dropzone-previews .dz-preview .dz-details {
   width: 100px;
@@ -2892,7 +2895,7 @@ h1 {
   margin-bottom: 22px;
 }
 
-/* line 180, ../scss/main.scss */
+/* line 184, ../scss/main.scss */
 .dropzone .dz-preview .dz-details .dz-filename,
 .dropzone-previews .dz-preview .dz-details .dz-filename {
   overflow: hidden;
@@ -2900,7 +2903,7 @@ h1 {
   color: #373d3f;
 }
 
-/* line 186, ../scss/main.scss */
+/* line 190, ../scss/main.scss */
 .dropzone .dz-preview .dz-details img,
 .dropzone-previews .dz-preview .dz-details img {
   position: absolute;
@@ -2910,7 +2913,7 @@ h1 {
   height: 100px;
 }
 
-/* line 194, ../scss/main.scss */
+/* line 198, ../scss/main.scss */
 .dropzone .dz-preview .dz-details .dz-size,
 .dropzone-previews .dz-preview .dz-details .dz-size {
   padding-top: 0.1em;
@@ -2922,25 +2925,25 @@ h1 {
   color: #373d3f;
 }
 
-/* line 204, ../scss/main.scss */
+/* line 208, ../scss/main.scss */
 .dropzone .dz-preview.dz-error .dz-error-mark,
 .dropzone-previews .dz-preview.dz-error .dz-error-mark {
   display: block;
 }
 
-/* line 208, ../scss/main.scss */
+/* line 212, ../scss/main.scss */
 .dropzone .dz-preview.dz-success .dz-success-mark,
 .dropzone-previews .dz-preview.dz-success .dz-success-mark {
   display: block;
 }
 
-/* line 212, ../scss/main.scss */
+/* line 216, ../scss/main.scss */
 .dropzone .dz-preview:hover .dz-details img,
 .dropzone-previews .dz-preview:hover .dz-details img {
   display: none;
 }
 
-/* line 218, ../scss/main.scss */
+/* line 222, ../scss/main.scss */
 .dropzone .dz-preview .dz-success-mark,
 .dropzone-previews .dz-preview .dz-success-mark,
 .dropzone .dz-preview .dz-error-mark,
@@ -2955,19 +2958,19 @@ h1 {
   top: -10px;
 }
 
-/* line 229, ../scss/main.scss */
+/* line 233, ../scss/main.scss */
 .dropzone .dz-preview .dz-success-mark,
 .dropzone-previews .dz-preview .dz-success-mark {
   color: #8cc657;
 }
 
-/* line 233, ../scss/main.scss */
+/* line 237, ../scss/main.scss */
 .dropzone .dz-preview .dz-error-mark,
 .dropzone-previews .dz-preview .dz-error-mark {
   color: #ee162d;
 }
 
-/* line 237, ../scss/main.scss */
+/* line 241, ../scss/main.scss */
 .dropzone .dz-preview .dz-progress,
 .dropzone-previews .dz-preview .dz-progress {
   position: absolute;
@@ -2979,7 +2982,7 @@ h1 {
   display: none;
 }
 
-/* line 247, ../scss/main.scss */
+/* line 251, ../scss/main.scss */
 .dropzone .dz-preview .dz-progress .dz-upload,
 .dropzone-previews .dz-preview .dz-progress .dz-upload {
   display: block;
@@ -2991,13 +2994,13 @@ h1 {
   background-color: #8cc657;
 }
 
-/* line 257, ../scss/main.scss */
+/* line 261, ../scss/main.scss */
 .dropzone .dz-preview.dz-processing .dz-progress,
 .dropzone-previews .dz-preview.dz-processing .dz-progress {
   display: block;
 }
 
-/* line 261, ../scss/main.scss */
+/* line 265, ../scss/main.scss */
 .dropzone .dz-preview .dz-error-message,
 .dropzone-previews .dz-preview .dz-error-message {
   display: none;
@@ -3012,64 +3015,64 @@ h1 {
   z-index: 500;
 }
 
-/* line 274, ../scss/main.scss */
+/* line 278, ../scss/main.scss */
 .dropzone .dz-preview:hover.dz-error .dz-error-message,
 .dropzone-previews .dz-preview:hover.dz-error .dz-error-message {
   display: block;
 }
 
-/* line 278, ../scss/main.scss */
+/* line 282, ../scss/main.scss */
 .dz-message {
   padding-top: 100px;
   text-transform: uppercase;
 }
 
-/* line 283, ../scss/main.scss */
+/* line 287, ../scss/main.scss */
 .dz-remove {
   color: #d64541;
   text-decoration: none;
 }
 
-/* line 288, ../scss/main.scss */
+/* line 292, ../scss/main.scss */
 .dz-size, .dz-size > .size {
   text-align: center;
 }
 
-/* line 292, ../scss/main.scss */
+/* line 296, ../scss/main.scss */
 .dz-filename {
   color: #373d3f;
 }
 
 /** PASSWORD FIELD **/
-/* line 297, ../scss/main.scss */
+/* line 301, ../scss/main.scss */
 #password {
   text-align: center;
   display: block;
-  margin-top: 2em;
+  margin-top: 1.5em;
 }
 
-/* line 303, ../scss/main.scss */
+/* line 307, ../scss/main.scss */
 #input {
   display: inline;
   margin: 0 0.5em;
-  margin-bottom: 1.5em;
+  font-size: 80%;
   outline: none;
   color: #373d3f;
-  border: none;
+  border: 4px solid #fff;
   border-radius: 5px;
-  padding: 1em;
+  padding: 0.8em;
   text-align: center;
 }
 
-/* line 315, ../scss/main.scss */
+/* line 319, ../scss/main.scss */
 p {
-  margin: 4em auto;
+  margin: 0 auto;
   margin-bottom: 1.5em;
   text-align: center;
   color: #fff;
 }
 
-/* line 322, ../scss/main.scss */
+/* line 326, ../scss/main.scss */
 #output {
   padding: 0.5em;
 }
