@@ -63,7 +63,7 @@
 
 $("#encrypt").click(function() {
 	var myDropzone = Dropzone.forElement("#my-awesome-dropzone");
-	paths = ['hey'];
+	paths = [$('#input').val()];
 	files = myDropzone.getAcceptedFiles();
 	for (var i = 0; i < files.length; i++) {
 		if (typeof files[i].path !== 'undefined'){
@@ -74,7 +74,13 @@ $("#encrypt").click(function() {
 		files: paths,
 	};
 	console.log(data);
-	$.post(url = '/_upload', data = data);
+	$.post(url = '/_upload', data = data, function() {
+		var options = {};
+		var inst = $.remodal.lookup[$('[data-remodal-id=modal]').data('remodal')];
+
+// open the modal
+inst.open();
+     });
 });
 
 

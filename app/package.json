@@ -14,12 +14,13 @@
   "scripts": {
     "test": "test"
   },
-  "author": "",
-  "license": "ISC",
   "dev  Dependencies": {
     "body-parser": "^1.10.0"
   },
   "webkit": {
     "plugin": true
+  },
+  "dependencies": {
+    "body-parser": "^1.10.0"
   }
 }
