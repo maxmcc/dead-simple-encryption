@@ -29,7 +29,7 @@
     </form>
     
     <div id="password">
-        <p>Enter or generate a password for future decryption:</p>
+        <p>Enter or generate a password for encryption or input your submitted password for decryption:</p>
         <input id="input" placeholder="Type your password"></input>
         <button class="btn btn-pass" href="javascript:void(0)" id="generate">Generate</button>
         <span id="output"></span>
