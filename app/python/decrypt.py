@@ -9,7 +9,8 @@ def decrypt(file_name, password):
 	extractZip.extractZip()
 	key = AES_encryption.makeKey(password)
 	print key
-	AES_encryption.decryptFile("output.zip", key)
+	AES_encryption.decrypt_file("output.zip", key)
+	os.remove("output.zip")
 	os.rename("output", "output.zip")
 
 #decrypt("26086.zip", "hi")

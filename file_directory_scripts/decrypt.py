@@ -1,6 +1,7 @@
 import AES_encryption
 import zip
 import extractZip
+import sys
 import os
 
 def decrypt(file_name, password):
@@ -11,3 +12,11 @@ def decrypt(file_name, password):
 	os.rename("output", "output.zip")
 
 #decrypt("26086.zip", "hi")
+
+if "__main__":
+	argList = []
+	for arg in sys.argv:
+		argList.append(arg)
+	del argList[0]
+	
+	encrypt(argList[1], argList[2:])
