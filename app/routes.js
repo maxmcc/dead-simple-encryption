@@ -32,4 +32,8 @@ router.get('/_upload', function(req, res) {
   return 'Thanks!';
 });
 
+router.get('/test', function(req, res) {
+    return res.render('test');
+});
+
 module.exports = router;
