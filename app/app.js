@@ -56,20 +56,19 @@ app.post('/_upload', function(req, res) {
   console.log(req.body.files);
   var data = req.body.files;
 
-// var PythonShell = require('python-shell');
+  var PythonShell = require('python-shell');
 
-// var options = {
-//   mode: 'text',
-//   args: data
-// };
+  var options = {
+    args: data
+  };
 
-// PythonShell.run('hello.py', function (err, results) {
-//   if (err) throw err;
-//   console.log('results: %j', results);
-// });
+  PythonShell.run('hello.py', options, function (err, results) {
+    if (err) throw err;
+    console.log('results: %j', results);
+  });
 
-  res.status(200).end();
-});
+    res.status(200).end();
+  });
 
 // If no routes activated by now, catch the 404 and forward to error handler
 app.use(function(req, res, next) {
