@@ -7,8 +7,8 @@ import os
 import shutil
 
 
-def encrypt(zips=*args, password):
-	zip.makeZip(zips)
+def encrypt(password, *args):
+	zip.makeZip(args)
 	
 	unEncryptedZips = "zippedFiles.zip"
 	key = AES_encyrption.makeKey(password)
@@ -19,5 +19,5 @@ def encrypt(zips=*args, password):
 	encrypt(unEncryptedZips, key)
 	splitFiles(unEncryptedZips + '.enc')
 
-	
+encrypt("New Text Document.txt", "password")	
 	
