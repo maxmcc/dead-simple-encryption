@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 import os
 import subprocess
 import random
+=======
+"""import os
+import subprocess
+import random """
+>>>>>>> bf5ac1f2699aaa6c5ef9abdce710a47960dfb686
 from zipfile import *
 
 

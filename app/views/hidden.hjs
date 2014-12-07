@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dead Simple Encryption</title>
+  <link href='../public/css/hidden.css' rel='stylesheet'>
+</head>
+
+<body>
+    <input type="button" style="color: transparent; background-color: transparent; border: none;" onclick="window.location.href='index'">
+</body>
+</html>

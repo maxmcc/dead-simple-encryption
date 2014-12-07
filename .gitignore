@@ -55,3 +55,4 @@ target/
 
 # Us
 .idea/*
+.sass-cache/
