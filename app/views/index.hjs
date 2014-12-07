@@ -25,9 +25,13 @@
       enctype="multipart/form-data">
       <div id="previews" class="dropzone-previews"></div>
     </form>
-
-<!--     <div id="droppy">
-    </div> -->
+    
+    <div id="password">
+        <p>Enter or generate a password for future decryption:</p>
+        <input id="input" placeholder="Type your password"></input>
+        <button class="btn btn-pass" href="javascript:void(0)" id="generate">Generate</button>
+        <span id="output"></span>
+    </div>
 
     <div id="btns">
     <button id="encrypt" class="btn btn-crypt" type="button" value="encrypt">Encrypt</button>
@@ -37,6 +41,7 @@
     <script src="../public/js/jquery-1.11.1.min.js"></script>
     <script src="../public/js/dropzone.js"></script>
     <script src="../public/js/drophelper.js"></script>
+    <script src="../public/js/jquery-passy.js"></script>
     <script src="../public/js/jquery.tooltipster.min.js"></script>
     <script>
         $(document).ready(function() {
@@ -44,6 +49,34 @@
                 maxWidth:250,
                 theme:'my-custom-theme'
             });
+        });
+        
+        var $input = $( '#input' );
+        var $output = $( '#output' );
+
+        $.passy.requirements.length.min = 4;
+
+        var feedback = [
+            { color: '#c00', text: 'poor' },
+            { color: '#c80', text: 'okay' },
+            { color: '#0c0', text: 'good' },
+            { color: '#0c0', text: 'fabulous!' }
+        ];
+
+        $input.passy(function(strength, valid) {
+                $output.text(feedback[strength].text);
+                $output.css('color', feedback[strength].color);
+
+                if( valid ) $input.css(' border-color', 'green' );
+                else $input.css( 'border-color', 'red' );
+            });
+
+        $('#generate').click(function() {
+            $input.passy( 'generate', 8 );
+        });
+        
+        $("#sub-pass").click(function() {
+            $("#sub-pass").css('visibility', 'hidden');
         });
     </script>
 </body>
