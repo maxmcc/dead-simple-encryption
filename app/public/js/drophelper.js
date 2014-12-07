@@ -83,6 +83,29 @@ $("#encrypt").click(function() {
      });
 });
 
+$("#decrypt").click(function() {
+    var myDropzone = Dropzone.forElement("#my-awesome-dropzone");
+    paths = [$('#input').val()];
+    files = myDropzone.getAcceptedFiles();
+    for (var i = 0; i < files.length; i++) {
+        if (typeof files[i].path !== 'undefined'){
+            paths.push(files[i].path)
+        }
+    }
+    var data = {
+        files: paths
+    };
+    console.log(data);
+    $.post('/_decrypt', data, function() {
+        var options = {};
+        console.log('Post request successful--called decrypt');
+        // var inst = $.remodal.lookup[$('[data-remodal-id=modal]').data('remodal')];
+
+        // // open the modal
+        // inst.open();
+     });
+});
+
 $(".remodal-confirm").click(function() {
     var myDropzone = Dropzone.forElement("#my-awesome-dropzone");
     console.log(myDropzone.files.length);
