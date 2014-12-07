@@ -14,7 +14,6 @@ def unzip(zipfile):
 	zipped.extractall()
 	return 1
 	
-unzip("zip.zip")
 """def compress_to_image(input_pic, input_zip):
     random_hash = str(random.getrandbits(16))
     with ZipFile(file="backup" + random_hash + ".zip",
