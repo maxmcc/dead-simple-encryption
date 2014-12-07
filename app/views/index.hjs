@@ -81,11 +81,9 @@
         ];
 
         $input.passy(function(strength, valid) {
-                $output.text(feedback[strength].text);
-                $output.css('color', feedback[strength].color);
+                //$output.text(feedback[strength].text);
+                $input.css('border-color', feedback[strength].color);
 
-                if( valid ) $input.css(' border-color', 'green' );
-                else $input.css( 'border-color', 'red' );
             });
 
         $('#generate').click(function() {
