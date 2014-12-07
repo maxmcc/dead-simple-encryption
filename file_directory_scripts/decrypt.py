@@ -10,4 +10,4 @@ def decrypt(file_name, password):
 	AES_encryption.decryptFile("output.zip", key)
 	os.rename("output", "output.zip")
 
-decrypt("50850.zip", "password")
+#decrypt("26086.zip", "hi")
