@@ -37,7 +37,7 @@
 
     <div id="btns">
     <button id="encrypt" class="btn btn-crypt" type="button" value="encrypt">Encrypt</button>
-    <button class="btn btn-crypt" type="button" value="decrypt">Decrypt</button>
+    <button id="descrypt" class="btn btn-crypt" type="button" value="decrypt">Decrypt</button>
     </div>
     
   </div>
