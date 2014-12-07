@@ -1,8 +1,12 @@
 import AES_encryption
+import zip
+import extractZip
 
 def decrypt(file_name, password):
-	unzip(file_name)
+	zip.unzip(file_name)
 	extractZip()
-	key = makeKey(password)
-	decrypt("output.zip", key)
-	unzip("output.zip")
+	key = AES_encryption.makeKey(password)
+	AES_encryption.decrypt("output.zip", key)
+	zip.unzip("output.zip")
+	
+decrypt("IMG_1618.zip","password")

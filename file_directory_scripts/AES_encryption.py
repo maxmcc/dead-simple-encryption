@@ -36,5 +36,5 @@ def decryptFile(file_name, key):
 
 def makeKey(password):
 	m = MD5.new()
-	m.update(key)
+	m.update(password)
 	return m.digest()
