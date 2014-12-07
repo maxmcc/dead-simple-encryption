@@ -1,12 +1,13 @@
 import os
 import platform
+import appdirs
 
 
 def getFolderSize(folder):
 	total_size = os.path.getsize(folder)
 	for item in os.listdir(folder):
 		itempath = os.path.join(folder, item)
-		print itempath
+		#print itempath
 		try:
 			if os.path.isfile(itempath):
 				total_size += os.path.getsize(itempath)
@@ -17,65 +18,48 @@ def getFolderSize(folder):
 	return total_size
 	
 def gssd(root_path, desired_size):
-    os.chdir(root_path)
-	if platform.system == "nt"
-		if getFolderSize(root_path) < desired_size:
-			return None
+	os.chdir(root_path)
+	if getFolderSize(root_path) < desired_size:
+		return None
+	children = map(lambda child: os.path.abspath(child), os.listdir(root_path))
+	no_dots = filter(lambda child: os.path.basename(child)[0] is not '.', children)
+	no_files = filter(lambda child: os.path.isdir(child), no_dots)
 
-		children = map(lambda child: os.path.abspath(child), os.listdir(root_path))
-		no_dots = filter(lambda child: os.path.basename(child)[0] is not '.', children)
-		no_files = filter(lambda child: os.path.isdir(child), no_dots)
+	def cmp_by_size(a, b):
+		a_size = os.path.getsize(a)
+		b_size = os.path.getsize(b)
+		return cmp(a_size, b_size)
 
-		def cmp_by_size(a, b):
-			a_size = os.path.getsize(a)
-			b_size = os.path.getsize(b)
-			return cmp(a_size, b_size)
+	sorted_children = sorted(no_files, cmp=cmp_by_size)
+	for child in sorted_children:
+		if gssd(child, desired_size) is not None:
+			return child
 
-		sorted_children = sorted(no_files, cmp=cmp_by_size)
-		for child in sorted_children:
-			if gssd(child, desired_size) is not None:
-				return child
+	return root_path
+def overFunction(desired_size):
 
-		return root_path
-	elif platform.system == "posix":
-				if os.path.getsize(root_path) < desired_size:
-			return None
-
-		children = map(lambda child: os.path.abspath(child), os.listdir(root_path))
-		no_dots = filter(lambda child: os.path.basename(child)[0] is not '.', children)
-		no_files = filter(lambda child: os.path.isdir(child), no_dots)
-
-		def cmp_by_size(a, b):
-			a_size = os.path.getsize(a)
-			b_size = os.path.getsize(b)
-			return cmp(a_size, b_size)
-
-		sorted_children = sorted(no_files, cmp=cmp_by_size)
-		for child in sorted_children:
-			if gssd(child, desired_size) is not None:
-				return child
-
-		return root_path
-	else: 
-				if getFolderSize(root_path) < desired_size:
-			return None
-
-		children = map(lambda child: os.path.abspath(child), os.listdir(root_path))
-		no_dots = filter(lambda child: os.path.basename(child)[0] is not '.', children)
-		no_files = filter(lambda child: os.path.isdir(child), no_dots)
-
-		def cmp_by_size(a, b):
-			a_size = os.path.getsize(a)
-			b_size = os.path.getsize(b)
-			return cmp(a_size, b_size)
-
-		sorted_children = sorted(no_files, cmp=cmp_by_size)
-		for child in sorted_children:
-			if gssd(child, desired_size) is not None:
-				return child
-
-		return root_path
+		
+	picturesGSSD = gssd("~/Pictures", desired_size)
+	programFilesGSSD = gssd("/Applications", desired_size)
+	DocumentsGSSD = gssd("~/Documents", desired_size)
+	try:
+		pictureSize = getFolderSize(picturesGSSD)
+	except:
+		pictureSize = 1024*1024*1024*1024*1024*1024
+	try:
+		programFileSize = getFolderSize(programFilesGSSD)
+	except:
+		programFileSize = 1024*1024*1024*1024*1024*1024
+	try:
+		DocumentsSize = getFolderSize(DocumentsGSSD)
+	except:
+		DocumentsSize = 1024*1024*1024*1024*1024*1024
+	sizeDict = {pictureSize: picturesGSSD, \
+				programFileSize: programFilesGSSD, \
+				DocumentsSize: DocumentsGSSD}
+	print desired_size
+	return sizeDict[min(pictureSize,programFileSize,DocumentsSize)]
 	
-print gssd("D:/", 1024*1024*1024)
-print 1024*1024*1024
-print getFolderSize(gssd("D:/", 1024*1024*1024))
+
+	
+print overFunction(1024*1024*1024)
