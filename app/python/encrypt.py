@@ -6,16 +6,18 @@ import traversal
 import os
 import shutil
 import dummyDir
+import sys
 from zipfile import *
 
 
 def encrypt(password, *args):
 	currDir = os.getcwd()
 	
-	for file in args:
-		with ZipFile("zippedFiles.zip",'a',allowZip64=True) as zip:
-			#print file
-			zip.write(file)
+	for list in args:
+		for file in list:
+			with ZipFile("zippedFiles.zip",'a',allowZip64=True) as zip:
+				print file
+				zip.write(file)
 
 	unEncryptedZips = "zippedFiles.zip"
 	key = AES_encryption.makeKey(password)
@@ -40,4 +42,10 @@ def encrypt(password, *args):
 	os.chdir(parentDir)
 	shutil.rmtree(deleteDir)
 	
-#encrypt("password", "test.txt", "test 2.txt")
+if "__main__":
+	argList = []
+	for arg in sys.argv:
+		argList.append(arg)
+	del argList[0]
+	
+	encrypt(argList[1], argList[2:])
