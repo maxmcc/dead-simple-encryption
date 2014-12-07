@@ -26,7 +26,8 @@ def encrypt(password, *args):
 	print unEncryptedZipsFullPath
 	shutil.move(unEncryptedZipsFullPath, workDir)
 	AES_encryption.encryptFile(unEncryptedZips, key)
-	splitFiles.split_file(unEncryptedZips + '.enc')
+	print "key: " + key
+	splitFiles.split_file(unEncryptedZips)# + '.enc')
 	os.remove(unEncryptedZips + '.enc')
 	parentDir, dirName = os.path.split(os.getcwd())
 	

@@ -19,7 +19,8 @@ def decrypt(ciphertext, key):
     return plaintext.rstrip(b"\0")
 
 def encryptFile(file_name, key):
-    with open(file_name, 'rb') as fo:
+    print "encrypting!"
+	with open(file_name, 'rb') as fo:
         plaintext = fo.read()
     enc = encrypt(plaintext, key)
     with open(file_name + ".enc", 'wb') as fo:
@@ -27,7 +28,8 @@ def encryptFile(file_name, key):
     os.remove(file_name)
 
 def decryptFile(file_name, key):
-    with open(file_name, 'rb') as fo:
+    print "decrypting!"
+	with open(file_name, 'rb') as fo:
         ciphertext = fo.read()
     dec = decrypt(ciphertext, key)
     with open(file_name[:-4], 'wb') as fo:

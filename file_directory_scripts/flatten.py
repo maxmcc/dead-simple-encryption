@@ -21,11 +21,13 @@ def flatten():
 			print hash
 			parentDirectory = os.path.dirname(os.getcwd())
 			fileToMove = os.getcwd() + "/" + file
-			fileRename, fileExt = file.split(".")
-			fileRename += str(hash)
-			fileToRename = os.getcwd() + "/" + fileRename + "." + fileExt
-			os.rename(fileToMove, fileToRename)
-			
+			try:
+				fileRename, fileExt = file.split(".")
+				fileRename += str(hash)
+				fileToRename = os.getcwd() + "/" + fileRename + "." + fileExt
+				os.rename(fileToMove, fileToRename)
+			except:
+				fileRename = os.path.join(os.getcwd() + "/" + file + str(hash)
 			
 			shutil.move(fileToRename, parentDirectory)
 			#print "moved " + fileToRename + " to " + parentDirectory
