@@ -26,10 +26,10 @@ def flatten():
 				fileRename += str(hash)
 				fileToRename = os.getcwd() + "/" + fileRename + "." + fileExt
 				os.rename(fileToMove, fileToRename)
+				shutil.move(fileToRename, parentDirectory)
 			except:
 				fileRename = os.path.join(os.getcwd() + "/" + file + str(hash))
 			
-			shutil.move(fileToRename, parentDirectory)
 			#print "moved " + fileToRename + " to " + parentDirectory
 
 		removeDir = os.getcwd()
