@@ -1,30 +1,31 @@
 import os
 import subprocess
-import zipfile #for windows 
+import random
+from zipfile import *
 
 
-def compress_to_image():
-    input_pic = str(raw_input("What's your input picture: "))
-    input_zip = str(raw_input("What's your input zip: "))
+def compress_to_image(input_pic, input_zip):
+    random_hash = str(random.getrandbits(16))
+    with ZipFile(file="backup" + random_hash + ".zip",
+                 mode="a",
+                 compression=ZIP_DEFLATED,
+                 allowZip64=True) as output_zip:
+        output_pic = "output_picture.jpg"
+        subprocess.call("cat " + input_pic + " " + input_zip + " > "
+                        + output_pic, shell=True)
+        # FIXME need Win implementation
+        output_zip.write(filename=output_pic)
+        output_zip.close()
+        os.remove(output_pic)
 
-    if os.name == "nt":
-        subprocess.call("copy /b " + input_pic + " + " + input_zip + " output.jpg", shell=True)
-    elif os.name == "posix":
-        subprocess.call("cat " + input_pic + " " + input_zip + " > output.jpg", shell=True)
+
+def decompress_from_images(input_pics):
+    input_zip = ZipFile(file=input_pics, mode="r")
+    injected_files = input_zip.namelist()
+    for f in injected_files:
+        f.extractall()
 
 
-def decompress_from_image():
-    input_pic = str(raw_input("What's your input picture: "))
+# compress_to_image("unsuspect_picture.jpg", "secret_payload1.zip")
+# decompress_from_image()
 
-    if os.name == "nt":
-		zfile = zipfile.ZipFile(input_pic)
-		for name in zfile.namelist():
-			(dirname, filename) = os.path.split(name)
-			#print "Decompressing " + filename + " on " + dirname
-			"""if not os.path.exists(dirname):
-				os.makedirs(dirname)"""
-			zfile.extractall()
-    elif os.name == "posix":
-        subprocess.call("unzip " + input_pic, shell=True)
-
-decompress_from_image()
