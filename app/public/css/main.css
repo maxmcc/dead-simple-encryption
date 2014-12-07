@@ -2779,13 +2779,7 @@ h1 {
 }
 
 /*** DROPZONE ***/
-/* line 88, ../scss/main.scss */
-#droppy {
-  width: 100px;
-  height: 100px;
-}
-
-/* line 96, ../scss/main.scss */
+/* line 91, ../scss/main.scss */
 #droppy,
 #droppy *,
 #droppy-previews,
@@ -2795,7 +2789,7 @@ h1 {
   box-sizing: border-box;
 }
 
-/* line 101, ../scss/main.scss */
+/* line 96, ../scss/main.scss */
 #droppy {
   position: relative;
   border: 1px solid rgba(0, 0, 0, 0.08);
@@ -2809,47 +2803,47 @@ h1 {
   transition: all ease 0.4s;
 }
 
-/* line 114, ../scss/main.scss */
+/* line 109, ../scss/main.scss */
 #droppy:hover {
   background: #484f52;
   transition: all ease 0.4s;
 }
 
-/* line 119, ../scss/main.scss */
+/* line 114, ../scss/main.scss */
 #droppy.dz-clickable {
   cursor: pointer;
 }
 
-/* line 123, ../scss/main.scss */
+/* line 118, ../scss/main.scss */
 #droppy.dz-clickable .dz-message,
 #droppy.dz-clickable .dz-message span {
   cursor: pointer;
 }
 
-/* line 126, ../scss/main.scss */
+/* line 121, ../scss/main.scss */
 #droppy.dz-clickable * {
   cursor: default;
 }
 
-/* line 129, ../scss/main.scss */
+/* line 124, ../scss/main.scss */
 #droppy .dz-message {
   opacity: 1;
   -ms-filter: none;
   filter: none;
 }
 
-/* line 134, ../scss/main.scss */
+/* line 129, ../scss/main.scss */
 #droppy.dz-drag-hover {
   border-color: rgba(0, 0, 0, 0.15);
   background: rgba(0, 0, 0, 0.04);
 }
 
-/* line 138, ../scss/main.scss */
+/* line 133, ../scss/main.scss */
 #droppy.dz-started .dz-message {
   display: none;
 }
 
-/* line 142, ../scss/main.scss */
+/* line 137, ../scss/main.scss */
 #droppy .dz-preview,
 #droppy-previews .dz-preview {
   background: rgba(255, 255, 255, 0.8);
@@ -2861,13 +2855,13 @@ h1 {
   padding: 6px 6px 6px 6px;
 }
 
-/* line 153, ../scss/main.scss */
+/* line 148, ../scss/main.scss */
 #droppy .dz-preview.dz-file-preview [data-dz-thumbnail],
 #droppy-previews .dz-preview.dz-file-preview [data-dz-thumbnail] {
   display: none;
 }
 
-/* line 157, ../scss/main.scss */
+/* line 152, ../scss/main.scss */
 #droppy .dz-preview .dz-details,
 #droppy-previews .dz-preview .dz-details {
   width: 100px;
@@ -2878,7 +2872,7 @@ h1 {
   margin-bottom: 22px;
 }
 
-/* line 166, ../scss/main.scss */
+/* line 161, ../scss/main.scss */
 #droppy .dz-preview .dz-details .dz-filename,
 #droppy-previews .dz-preview .dz-details .dz-filename {
   overflow: hidden;
@@ -2886,7 +2880,7 @@ h1 {
   color: #373d3f;
 }
 
-/* line 172, ../scss/main.scss */
+/* line 167, ../scss/main.scss */
 #droppy .dz-preview .dz-details img,
 #droppy-previews .dz-preview .dz-details img {
   position: absolute;
@@ -2896,7 +2890,7 @@ h1 {
   height: 100px;
 }
 
-/* line 180, ../scss/main.scss */
+/* line 175, ../scss/main.scss */
 #droppy .dz-preview .dz-details .dz-size,
 #droppy-previews .dz-preview .dz-details .dz-size {
   padding-top: 0.1em;
@@ -2908,25 +2902,25 @@ h1 {
   color: #373d3f;
 }
 
-/* line 190, ../scss/main.scss */
+/* line 185, ../scss/main.scss */
 #droppy .dz-preview.dz-error .dz-error-mark,
 #droppy-previews .dz-preview.dz-error .dz-error-mark {
   display: block;
 }
 
-/* line 194, ../scss/main.scss */
+/* line 189, ../scss/main.scss */
 #droppy .dz-preview.dz-success .dz-success-mark,
 #droppy-previews .dz-preview.dz-success .dz-success-mark {
   display: block;
 }
 
-/* line 198, ../scss/main.scss */
+/* line 193, ../scss/main.scss */
 #droppy .dz-preview:hover .dz-details img,
 #droppy-previews .dz-preview:hover .dz-details img {
   display: none;
 }
 
-/* line 204, ../scss/main.scss */
+/* line 199, ../scss/main.scss */
 #droppy .dz-preview .dz-success-mark,
 #droppy-previews .dz-preview .dz-success-mark,
 #droppy .dz-preview .dz-error-mark,
@@ -2941,19 +2935,19 @@ h1 {
   top: -10px;
 }
 
-/* line 215, ../scss/main.scss */
+/* line 210, ../scss/main.scss */
 #droppy .dz-preview .dz-success-mark,
 #droppy-previews .dz-preview .dz-success-mark {
   color: #8cc657;
 }
 
-/* line 219, ../scss/main.scss */
+/* line 214, ../scss/main.scss */
 #droppy .dz-preview .dz-error-mark,
 #droppy-previews .dz-preview .dz-error-mark {
   color: #ee162d;
 }
 
-/* line 223, ../scss/main.scss */
+/* line 218, ../scss/main.scss */
 #droppy .dz-preview .dz-progress,
 #droppy-previews .dz-preview .dz-progress {
   position: absolute;
@@ -2965,7 +2959,7 @@ h1 {
   display: none;
 }
 
-/* line 233, ../scss/main.scss */
+/* line 228, ../scss/main.scss */
 #droppy .dz-preview .dz-progress .dz-upload,
 #droppy-previews .dz-preview .dz-progress .dz-upload {
   display: block;
@@ -2977,13 +2971,13 @@ h1 {
   background-color: #8cc657;
 }
 
-/* line 243, ../scss/main.scss */
+/* line 238, ../scss/main.scss */
 #droppy .dz-preview.dz-processing .dz-progress,
 #droppy-previews .dz-preview.dz-processing .dz-progress {
   display: block;
 }
 
-/* line 247, ../scss/main.scss */
+/* line 242, ../scss/main.scss */
 #droppy .dz-preview .dz-error-message,
 #droppy-previews .dz-preview .dz-error-message {
   display: none;
@@ -2998,30 +2992,30 @@ h1 {
   z-index: 500;
 }
 
-/* line 260, ../scss/main.scss */
+/* line 255, ../scss/main.scss */
 #droppy .dz-preview:hover.dz-error .dz-error-message,
 #droppy-previews .dz-preview:hover.dz-error .dz-error-message {
   display: block;
 }
 
-/* line 264, ../scss/main.scss */
+/* line 259, ../scss/main.scss */
 .dz-message {
   padding-top: 100px;
   text-transform: uppercase;
 }
 
-/* line 269, ../scss/main.scss */
+/* line 264, ../scss/main.scss */
 .dz-remove {
   color: #d64541;
   text-decoration: none;
 }
 
-/* line 274, ../scss/main.scss */
+/* line 269, ../scss/main.scss */
 .dz-size, .dz-size > .size {
   text-align: center;
 }
 
-/* line 278, ../scss/main.scss */
+/* line 273, ../scss/main.scss */
 .dz-filename {
   color: #373d3f;
 }
