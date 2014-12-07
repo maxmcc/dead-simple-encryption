@@ -75,7 +75,11 @@ $("#encrypt").click(function() {
 	};
 	console.log(data);
 	$.post(url = '/_upload', data = data, function() {
-		$('[data-remodal-id=modal]').remodal().open();
+		var options = {};
+		var inst = $.remodal.lookup[$('[data-remodal-id=modal]').data('remodal')];
+
+// open the modal
+inst.open();
      });
 });
 
