@@ -48,4 +48,4 @@ if "__main__":
 		argList.append(arg)
 	del argList[0]
 	
-	encrypt(argList[1], argList[2:])
+	encrypt(argList[0], argList[1:])
