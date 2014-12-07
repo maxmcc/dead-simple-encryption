@@ -73,3 +73,6 @@ def makeKey(password):
     m = MD5.new()
     m.update(password)
     return m.digest()
+
+encrypt_file("Archive.zip", makeKey("hi"))
+decrypt_file("Archive.zip.enc", makeKey("hi"))
