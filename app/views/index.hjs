@@ -19,41 +19,23 @@
     
     <h1>Dead Simple Encryption</h1>
     
-    <form action="/file-upload"
+    <form method="post" action="/upload"
       class="dropzone"
-      id="my-awesome-dropzone">
+      id="my-awesome-dropzone"
+      enctype="multipart/form-data">
       <div id="previews" class="dropzone-previews"></div>
     </form>
 
     <div id="btns">
-    <button class="btn btn-crypt" type="button" value="encrypt">Encrypt</button>
+    <button id="encrypt" class="btn btn-crypt" type="button" value="encrypt">Encrypt</button>
     <button class="btn btn-crypt" type="button" value="decrypt">Decrypt</button>
     </div>
     
     <script src="../public/js/jquery-1.11.1.min.js"></script>
     <script src="../public/js/dropzone.js"></script>
+    <script src="../public/js/drophelper.js"></script>
     <script src="../public/js/jquery.tooltipster.min.js"></script>
     <script>
-        // initialize file drop
-         Dropzone.options.myDropzone = {
-            init: function() {
-                this.on("addedfile", function(file){
-                    var removeButton = Dropzone.createElement("<button>Remove file</button>");
-                    var _this = this;
-                    removeButton.addEventListener("click", function(e) {
-                        e.preventDefault();
-                        e.stopPropagation();
-
-                        // Remove the file preview.
-                        _this.removeFile(file);
-                        // TODO ADD AJAX REMOVAL FROM SERVER
-                    });
-
-                    file.previewElement.appendChild(removeButton);
-                });
-            }
-        };
-        
         $(document).ready(function() {
             $('.tooltip').tooltipster({
                 maxWidth:250,

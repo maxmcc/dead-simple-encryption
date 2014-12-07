@@ -1,8 +1,9 @@
 var path = require('path');
 var logger = require('morgan');
 var express = require('express');
+var bodyParser = require('body-parser');
+var multer = require('multer'); 
 // var cookieParser = require('cookie-parser');
-// var bodyParser = require('body-parser');
 // var session = require('cookie-session');
 var app = express();
 
@@ -50,6 +51,17 @@ app.use(function(err, req, res, next) {
     errorMessage: err.message,
     error: app.get('env') === 'development' ? err : {}
   });
+});
+
+// handle file uploads
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(multer());
+
+
+app.post('/upload', function(req, res, next) {
+    console.log(req.body);
+    console.log(req.files);
 });
 
 // Start listening for requests
