@@ -3,14 +3,13 @@ import os
 import random
 import shutil
 
-def dummyDir(path):
+def dummyDir(path, currDir):
+	print path
 	hash = random.getrandbits(16)
-	workDir = os.getcwd() + "\\" + str(hash)
+	workDir = currDir + "\\" + str(hash)
 	print workDir
 	shutil.copytree(path, workDir)
 	os.chdir(workDir) #move to working dir
+	print os.getcwd()
 	flatten.flatten()
-
-dummyDir("D:/Programming/dead-simple-encryption/file_directory_scripts/test")
-	
-	
+	return os.getcwd()

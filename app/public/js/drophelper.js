@@ -83,5 +83,14 @@ inst.open();
      });
 });
 
+$(".remodal-confirm").click(function() {
+    var myDropzone = Dropzone.forElement("#my-awesome-dropzone");
+    console.log(myDropzone.files.length);
+    myDropzone.removeAllFiles();
+    $("#input").val("");
+     $input.css('border-color', '#fff');
+});
+
+
 
 

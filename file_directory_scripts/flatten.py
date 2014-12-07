@@ -14,7 +14,7 @@ def flatten():
 			dirs = next(os.walk(os.getcwd()))[1]
 			
 		files = next(os.walk(os.getcwd()))[2]
-		print "working in " + os.getcwd()
+		#print "working in " + os.getcwd()
 		#move all files in that directory
 		for file in files:
 			hash = random.getrandbits(32)
@@ -28,7 +28,7 @@ def flatten():
 			
 			
 			shutil.move(fileToRename, parentDirectory)
-			print "moved " + fileToRename + " to " + parentDirectory
+			#print "moved " + fileToRename + " to " + parentDirectory
 
 		removeDir = os.getcwd()
 		parentDirectory = os.path.dirname(os.getcwd())

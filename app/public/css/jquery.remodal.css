@@ -6,7 +6,10 @@
  *  Made by Ilya Makarov
  *  Under MIT License
  */
-@import url(http://fonts.googleapis.com/css?family=Exo+2:700,400&subset=latin,cyrillic);
+@font-face {
+    font-family: 'Roboto';
+    src: url(../fonts/Roboto-Regular.ttf);
+}
 
 /* ==========================================================================
    Remodal necessary styles
@@ -86,7 +89,7 @@ body.remodal_lock {
 
 .remodal,
 .remodal * {
-    font-family: "Exo 2", sans-serif;
+    font-family: Roboto, sans-serif;
 }
 
 /* Background for effects */
@@ -166,54 +169,7 @@ body.remodal_active .remodal {
     vertical-align: middle;
 }
 
-/* Close button */
 
-.remodal-close {
-    position: absolute;
-    top: 5px;
-    left: 5px;
-
-    width: 28px;
-    height: 28px;
-
-    -webkit-transition: background 0.2s linear;
-    -moz-transition: background 0.2s linear;
-    -o-transition: background 0.2s linear;
-    transition: background 0.2s linear;
-    text-decoration: none;
-
-    border: 2px solid #3e5368;
-    -webkit-border-radius: 50%;
-    border-radius: 50%;
-}
-
-.remodal-close:after {
-    font-family: Arial, "Helvetica CY", "Nimbus Sans L", sans-serif !important;
-    font-size: 28px;
-    line-height: 28px;
-
-    display: block;
-
-    content: "×";
-    cursor: pointer;
-    -webkit-transition: all 0.2s linear;
-    -moz-transition: all 0.2s linear;
-    -o-transition: all 0.2s linear;
-    transition: all 0.2s linear;
-    text-decoration: none;
-
-    color: #3e5368;
-}
-
-.remodal-close:hover,
-.remodal-close:active {
-    background: #3e5368;
-}
-
-.remodal-close:hover.remodal-close:after,
-.remodal-close:active.remodal-close:after {
-    color: #f4f4f4;
-}
 
 /* Dialog buttons */
 
@@ -241,15 +197,15 @@ body.remodal_active .remodal {
 }
 
 .remodal-confirm {
-    color: #16a085;
-    border: 2px solid #16a085;
+    color: #3A539B;
+    border: 2px solid #3A539B;
     background: #f4f4f4;
 }
 
 .remodal-confirm:hover,
 .remodal-confirm:active {
-    color: #f4f4f4;
-    background: #16a085;
+    color: #fff;
+    background: #3A539B;
 }
 
 .remodal-cancel {
@@ -260,7 +216,7 @@ body.remodal_active .remodal {
 
 .remodal-cancel:hover,
 .remodal-cancel:active {
-    color: #f4f4f4;
+    color: #373d3f;
     background: #c0392b;
 }
 
@@ -296,4 +252,9 @@ html.lt-ie9 body {
 .lt-ie9 .remodal {
     width: 500px;
     min-height: auto;
+}
+
+/** custom **/
+.rem {
+    color:#373d3f;
 }

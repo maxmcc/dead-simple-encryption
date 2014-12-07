@@ -3,8 +3,7 @@ import os
 def extractZip():
 	files = next(os.walk(os.getcwd()))[2]
 	found = False
-	files.remove("extractZip.py")
-	files.remove("splitFiles.py")
+	hasNextFile = True
 	for file in files: #find first
 		print file
 		f = open(file, "rb")
@@ -18,6 +17,8 @@ def extractZip():
 				zip.close()
 				print i
 				nextFile = lines[i+1]
+				if "next = none" in nextFile:
+					hasNextFile = False
 				nextFile = nextFile.strip("next = ")
 				nextFile = nextFile.strip("\n")
 				found = True
@@ -25,7 +26,8 @@ def extractZip():
 		if found:
 			break
 	print "extractZip: "+nextFile
-	nextFiles(nextFile)
+	if hasNextFile:
+		nextFiles(nextFile)
 	
 def nextFiles(filename):
 	print filename
@@ -48,4 +50,3 @@ def nextFiles(filename):
 				nextFile = nextFile.strip("next = ")
 				nextFile = nextFile.strip("\n")
 				nextFiles(nextFile)
-extractZip()

@@ -1,4 +1,6 @@
 from zipfile import *
+import os
+import shutil
 
 def make_zip(*args):
 	for file in args:
@@ -7,7 +9,11 @@ def make_zip(*args):
 	return 1
 
 def unzip(zipfile):
+	os.mkdir(zipfile.strip(".zip"))
+	moveDir = os.getcwd() + "/" + zipfile.strip(".zip")
 	zipped = ZipFile(file=zipfile,allowZip64=True)
-	zipped.extractall()
+	zipped.extractall(moveDir)
+	zipped.close()
+	os.chdir(moveDir)
 	return 1
 

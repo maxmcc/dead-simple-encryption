@@ -37,21 +37,19 @@
 
     <div id="btns">
     <button id="encrypt" class="btn btn-crypt" type="button" value="encrypt">Encrypt</button>
-    <button class="btn btn-crypt" type="button" value="decrypt">Decrypt</button>
+    <button id="descrypt" class="btn btn-crypt" type="button" value="decrypt">Decrypt</button>
     </div>
     
   </div>
 
 
     <div class="remodal" data-remodal-id="modal">
-    <h1>Remodal</h1>
-    <p>
-      Flat, responsive, lightweight, fast, easy customizable modal window plugin
-      with declarative state notation and hash tracking.
+    <h1 class="rem">Success!</h1>
+    <p class="rem">
+     Your file is encrypted! It's in the same directory and all you need is your password to decrypt it. Thanks for using our service :)
     </p>
     <br>
-    <a class="remodal-cancel" href="#">Cancel</a>
-    <a class="remodal-confirm" href="#">OK</a>
+    <a class="remodal-confirm" href="#">OK!</a>
     </div>
     
     <script src="../public/js/jquery-1.11.1.min.js"></script>

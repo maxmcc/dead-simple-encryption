@@ -32,7 +32,7 @@ def decryptFile(file_name, key):
     dec = decrypt(ciphertext, key)
     with open(file_name[:-4], 'wb') as fo:
         fo.write(dec)
-    os.remove(file_name)
+	os.remove(file_name)
 
 def makeKey(password):
 	m = MD5.new()
