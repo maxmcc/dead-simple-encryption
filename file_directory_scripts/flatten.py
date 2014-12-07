@@ -36,5 +36,3 @@ def flatten():
 		shutil.rmtree(removeDir)
 		
 		rootSubDirs = next(os.walk(rootDir))[1]
-
-flatten()
