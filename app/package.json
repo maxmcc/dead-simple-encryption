@@ -2,7 +2,15 @@
   "name": "dead-simple-encryption",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "entry.html",
+  "node-main": "app.js",
+  "author": "",
+  "license": "ISC",
+  "window": {
+    "toolbar": false,
+    "width": 600,
+    "height": 600
+  },
   "scripts": {
     "test": "test"
   },
@@ -10,5 +18,8 @@
   "license": "ISC",
   "dev  Dependencies": {
     "body-parser": "^1.10.0"
+  },
+  "webkit": {
+    "plugin": true
   }
 }
