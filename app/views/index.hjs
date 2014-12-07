@@ -46,7 +46,7 @@
     <div class="remodal" data-remodal-id="modal">
     <h1 class="rem">Success!</h1>
     <p class="rem">
-     Your file is encrypted! It's in the same directory and all you need is your password to decrypt it. Thanks for using our service :)
+     Your file is encrypted! It's in the same directory and all you need is your password to decrypt it. Just come back, enter your password and hit 'Decrypt'. Your files will be back where they came from! Thanks for using our service :)
     </p>
     <br>
     <a class="remodal-confirm" href="#">OK!</a>
