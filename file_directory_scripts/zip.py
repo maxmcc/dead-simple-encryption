@@ -4,7 +4,18 @@ import random
 from zipfile import *
 
 
-def compress_to_image(input_pic, input_zip):
+"""
+def make_zip(*args):
+	for file in *args:
+		"""
+
+def unzip(zipfile):
+	zipped = ZipFile(file=zipfile,allowZip64=True)
+	zipped.extractall()
+	return 1
+	
+unzip("zip.zip")
+"""def compress_to_image(input_pic, input_zip):
     random_hash = str(random.getrandbits(16))
     with ZipFile(file="backup" + random_hash + ".zip",
                  mode="a",
@@ -24,7 +35,7 @@ def decompress_from_images(input_pics):
     injected_files = input_zip.namelist()
     for f in injected_files:
         f.extractall()
-
+"""
 
 # compress_to_image("unsuspect_picture.jpg", "secret_payload1.zip")
 # decompress_from_image()
