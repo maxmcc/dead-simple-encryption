@@ -1,6 +1,5 @@
 import os
 
-
 def split_file(filename):
     f = open(filename, "rb")  # assume binary
     data = f.read()
@@ -35,6 +34,3 @@ def split_file(filename):
                 re_split.write(data[curr_bit:curr_bit + chunk_size + 1])
                 working_file.close()
                 curr_bit += chunk_size
-
-
-split_file("hide.zip")
