@@ -15,7 +15,7 @@ router.get('/', function(req, res) {
 //   console.log('results: %j', results);
 // });
 
-  return res.render('hidden');
+  return res.render('index');
 });
 
 router.get('/index', function(req, res) {
