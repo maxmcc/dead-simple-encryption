@@ -6,6 +6,8 @@ var multer = require('multer');
 // var cookieParser = require('cookie-parser');
 // var session = require('cookie-session');
 var app = express();
+var PythonShell = require('python-shell');
+
 
 app.use( bodyParser.json() );       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
@@ -54,8 +56,6 @@ app.post('/upload', function(req, res, next) {
 
 app.post('/_upload', function(req, res) {
   var data = req.body.files;
-
-  var PythonShell = require('python-shell');
 
   var options = {
     args: data
