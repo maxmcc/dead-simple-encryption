@@ -2,7 +2,7 @@
  Dropzone.options.myDropzone = {
     autoProcessQueue: false,
     init: function() {
-        var submitButton = document.getElementById("#encrypt");
+        var submitButton = $("#encrypt");
         myDropzone = this; // closure
 
         submitButton.addEventListener("click", function() {
@@ -13,6 +13,13 @@
                 files: myDropzone.getAcceptedFiles(),
             };
             $.post(url = '/_upload', data = data);
+            myDropzone.processQueue();
+        });
+        
+        this.on("success", function(file,responsenew) {
+                     // alert(responsenew);
+                     var response = jQuery.parseJSON(responsenew);
+            console.log(response);
         });
 
 
