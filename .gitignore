@@ -56,3 +56,4 @@ target/
 # Us
 .idea/*
 .sass-cache/
+app/node_modules/
