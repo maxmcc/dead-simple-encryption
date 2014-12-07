@@ -8,7 +8,7 @@ import shutil
 
 
 def encrypt(password, *args):
-	zip.makeZip(args)
+	zip.make_zip(args)
 	
 	unEncryptedZips = "zippedFiles.zip"
 	key = AES_encyrption.makeKey(password)

@@ -2,7 +2,7 @@ from zipfile import *
 
 def make_zip(*args):
 	for file in args:
-		with ZipFile("zippedFiles.zip",'a',allowZip64=True) as zip:
+		with ZipFile("zippedFiles.zip",'w',allowZip64=True) as zip:
 			zip.write(file)
 	return 1
 		
