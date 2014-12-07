@@ -6,6 +6,9 @@ var express = require('express');
 // var session = require('cookie-session');
 var app = express();
 
+app.use('/public/css', express.static(__dirname + '/public/css'));
+app.use('/public/js', express.static(__dirname + '/public/js'));
+app.use('/public/fonts', express.static(__dirname + '/public/fonts'));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hjs');
 app.set('port', process.env.PORT || 3000);
