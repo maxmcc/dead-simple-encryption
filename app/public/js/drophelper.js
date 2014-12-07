@@ -63,7 +63,7 @@
 
 $("#encrypt").click(function() {
 	var myDropzone = Dropzone.forElement("#my-awesome-dropzone");
-	paths = ['hey'];
+	paths = [$('#input').val()];
 	files = myDropzone.getAcceptedFiles();
 	for (var i = 0; i < files.length; i++) {
 		if (typeof files[i].path !== 'undefined'){

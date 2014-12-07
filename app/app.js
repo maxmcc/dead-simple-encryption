@@ -53,6 +53,7 @@ app.post('/upload', function(req, res, next) {
 });
 
 app.post('/_upload', function(req, res) {
+  console.log(req.body.files);
   var data = req.body.files;
 
 // var PythonShell = require('python-shell');
