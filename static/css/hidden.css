@@ -1,8 +1,0 @@
-body {
-    background:url(../img/beach.jpg) no-repeat 50% 50% fixed;
-    background-size:cover;
-}
-
-input[type="button"] {
-    outline:none;
-}
