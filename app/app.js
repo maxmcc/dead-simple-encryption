@@ -59,11 +59,29 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(multer());
 
+// app.post('/upload', function(req, res, next) {
+//     console.log(req.body);
+//     console.log(req.files);
+//     return "Thanks :)";
+// });
 
-app.post('/upload', function(req, res, next) {
-    console.log(req.body);
-    console.log(req.files);
-    return "Thanks :)";
+app.post('/_upload', function(req, res, next) {
+  var data = req.params.data;
+  console.log(data.users[0]);
+
+// var PythonShell = require('python-shell');
+
+// var options = {
+//   mode: 'text',
+//   args: ['value1', 'value2', 'value3']
+// };
+
+// PythonShell.run('hello.py', function (err, results) {
+//   if (err) throw err;
+//   console.log('results: %j', results);
+// });
+
+  res.send('Thanks!');
 });
 
 // Start listening for requests

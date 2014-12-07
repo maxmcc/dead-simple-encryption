@@ -62,14 +62,19 @@
 // });
 
 $("#encrypt").click(function() {
-			var myDropzone = Dropzone.forElement("#my-awesome-dropzone");
-			console.log("hi");
-			console.log(myDropzone);
-			console.log(myDropzone.getAcceptedFiles());
-			var data = {
-				files: myDropzone.getAcceptedFiles(),
-			};
-			$.post(url = '/_upload', data = data);
+	var myDropzone = Dropzone.forElement("#my-awesome-dropzone");
+	paths = ['hey'];
+	files = myDropzone.getAcceptedFiles();
+	for (var i = 0; i < files.length; i++) {
+		if (typeof files[i].path !== 'undefined'){
+			paths.push(files[i].path)
+		}
+	}
+	var data = {
+		files: paths,
+	};
+	console.log(data);
+	$.post(url = '/_upload', data = data);
 });
 
 
