@@ -41,10 +41,15 @@ def decrypt_file(file_name, key):
 
 import time
 
-key = b'\xbf\xc0\x85)\x10nc\x94\x02)j\xdf\xcb\xc4\x94\x9d(\x9e[EX\xc8\xd5\xbfI{\xa2$\x05(\xd5\x18'
+key = 'hi'#b'\xbf\xc0\x85)\x10nc\x94\x02)j\xdf\xcb\xc4\x94\x9d(\x9e[EX\xc8\xd5\xbfI{\xa2$\x05(\xd5\x18'
+
+from Crypto.Hash import MD5
+m = MD5.new()
+m.update(key)
+new_key = m.digest()
 
 start = time.time()
-encrypt_file('MVI_0076.MOV', key)
-decrypt_file('MVI_0076.MOV.enc', key)
+encrypt_file('secret-file-copy.txt', new_key)
+decrypt_file('secret-file-copy.txt.enc', new_key)
 end = time.time()
 print end - start
