@@ -1,5 +1,5 @@
 var path = require('path');
-// var logger = require('morgan');
+var logger = require('morgan');
 var express = require('express');
 // var cookieParser = require('cookie-parser');
 // var bodyParser = require('body-parser');

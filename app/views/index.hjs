@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dead Simple Encryption</title>
+
+  <!--CSS-->
+  <link href='/public/css/normalize.css' rel='stylesheet'>
+  <link href='/public/css/font-awesome.min.css' rel='stylesheet'>
+  <link href='/public/css/tooltipster.css' rel='stylesheet'>
+  <link href='/public/css/main.css' rel='stylesheet'>
+</head>
+    
+<body>
+    <header>
+       <i class="fa fa-info-circle fa-lg ketchup tooltip" title="Simply drop your desired files to the designated area and 'Encrypt' will disguise your files as ___"></i>
+    </header>
+    
+    <h1>Dead Simple Encryption</h1>
+    
+    <form action="/file-upload"
+      class="dropzone"
+      id="my-awesome-dropzone">
+      <div id="previews" class="dropzone-previews"></div>
+    </form>
+
+    <div id="btns">
+    <button class="btn btn-crypt" type="button" value="encrypt">Encrypt</button>
+    <button class="btn btn-crypt" type="button" value="decrypt">Decrypt</button>
+    </div>
+    
+    <script src="/public/js/jquery-1.11.1.min.js"></script>
+    <script src="/public/js/dropzone.js"></script>
+    <script src="/public/js/jquery.tooltipster.min.js"></script>
+    <script>
+        // initialize file drop
+         Dropzone.options.myDropzone = {
+            init: function() {
+                this.on("addedfile", function(file){
+                    var removeButton = Dropzone.createElement("<button>Remove file</button>");
+                    var _this = this;
+                    removeButton.addEventListener("click", function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+
+                        // Remove the file preview.
+                        _this.removeFile(file);
+                        // TODO ADD AJAX REMOVAL FROM SERVER
+                    });
+
+                    file.previewElement.appendChild(removeButton);
+                });
+            }
+        };
+        
+        $(document).ready(function() {
+            $('.tooltip').tooltipster({
+                maxWidth:250,
+                theme:'my-custom-theme'
+            });
+        });
+    </script>
+</body>
+</html>
