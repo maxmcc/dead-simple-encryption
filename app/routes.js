@@ -22,4 +22,10 @@ router.get('/', function(req, res) {
   return;
 });*/
 
+router.get('/_upload', function(req, res) {
+  var data = req.params.data
+  console.log(data);
+  return 'Thanks!';
+});
+
 module.exports = router;

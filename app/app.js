@@ -62,6 +62,7 @@ app.use(multer());
 app.post('/upload', function(req, res, next) {
     console.log(req.body);
     console.log(req.files);
+    return "Thanks :)";
 });
 
 // Start listening for requests
