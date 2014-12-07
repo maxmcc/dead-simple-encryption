@@ -1,7 +1,5 @@
 from zipfile import *
 
-
-
 def make_zip(*args):
 	for file in args:
 		with ZipFile("zippedFiles.zip",'a',allowZip64=True) as zip:
