@@ -37,7 +37,7 @@
 
     <div id="btns">
     <button id="encrypt" class="btn btn-crypt" type="button" value="encrypt">Encrypt</button>
-    <button id="descrypt" class="btn btn-crypt" type="button" value="decrypt">Decrypt</button>
+    <button id="decrypt" class="btn btn-crypt" type="button" value="decrypt">Decrypt</button>
     </div>
     
   </div>
@@ -86,10 +86,6 @@
 
         $('#generate').click(function() {
             $input.passy( 'generate', 8 );
-        });
-        
-        $("#sub-pass").click(function() {
-            $("#sub-pass").css('visibility', 'hidden');
         });
     </script>
 </body>

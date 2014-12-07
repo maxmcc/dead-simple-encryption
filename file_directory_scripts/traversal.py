@@ -57,4 +57,12 @@ def overFunction(desired_size):
 	sizeDict = {pictureSize: picturesGSSD, \
 				programFileSize: programFilesGSSD, \
 				DocumentsSize: DocumentsGSSD}
-	return [sizeDict[min(pictureSize,programFileSize,DocumentsSize)], min(pictureSize,programFileSize,DocumentsSize)]
+	answer = [sizeDict[min(pictureSize,programFileSize,DocumentsSize)], min(pictureSize,programFileSize,DocumentsSize)]
+	if answer[0] == None: #no proper path in docs, program files, or pictures
+		path = os.path.expanduser("~/")
+		size = getFolderSize(path)
+		return [path, size]
+	else:
+		return answer
+	
+	

@@ -2,9 +2,9 @@ import flatten
 import os
 import random
 import shutil
+import traversal
 
 def dummyDir(path, currDir):
-	print path
 	hash = random.getrandbits(16)
 	workDir = currDir + "\\" + str(hash)
 	print workDir

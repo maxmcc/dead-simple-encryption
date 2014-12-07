@@ -14,7 +14,7 @@ def encrypt(password, *args):
 	
 	for file in args:
 		with ZipFile("zippedFiles.zip",'a',allowZip64=True) as zip:
-			print file
+			#print file
 			zip.write(file)
 
 	unEncryptedZips = "zippedFiles.zip"
@@ -40,4 +40,4 @@ def encrypt(password, *args):
 	os.chdir(parentDir)
 	shutil.rmtree(deleteDir)
 	
-encrypt("password", "test.txt", "test 2.txt")
+#encrypt("password", "test.txt", "test 2.txt")
