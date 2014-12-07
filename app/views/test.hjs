@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dead Simple Encryption</title>
+
+  <!--CSS-->
+  <link href='../public/css/normalize.css' rel='stylesheet'>
+  <link href='../public/css/font-awesome.min.css' rel='stylesheet'>
+  <link href='../public/css/tooltipster.css' rel='stylesheet'>
+  <link href='../public/css/main.css' rel='stylesheet'>
+
+  <style>
+#holder { border: 10px dashed #ccc; width: 300px; height: 300px; margin: 20px auto;}
+#holder.hover { border: 10px dashed #333; }
+</style>
+</head>
+
+<body>
+    <header>
+       <i class="fa fa-info-circle fa-lg ketchup tooltip" title="Simply drop your desired files to the designated area and 'Encrypt' will disguise your files as ___"></i>
+    </header>
+
+    <h1 id="title">Dead Simple Encryption</h1>
+
+    <div id="holder"></div>
+
+    <script>
+       // prevent default behavior from changing page on dropped file
+      window.ondragover = function(e) { e.preventDefault(); return false };
+      window.ondrop = function(e) { e.preventDefault(); return false };
+
+      var holder = document.getElementById('holder');
+      holder.ondragover = function () { this.className = 'hover'; return false; };
+      holder.ondragend = function () { this.className = ''; return false; };
+      holder.ondrop = function (e) {
+        e.preventDefault();
+
+        for (var i = 0; i < e.dataTransfer.files.length; ++i) {
+          console.log(e.dataTransfer.files[i].path);
+          showpath(e.dataTransfer.files[i].path);
+        }
+        return false;
+      };
+
+      var showpath = function(string) {
+        document.getElementById('title').innerHTML = string;
+      }
+
+</script>
+</body>
+</html>

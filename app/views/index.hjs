@@ -26,6 +26,9 @@
       <div id="previews" class="dropzone-previews"></div>
     </form>
 
+<!--     <div id="droppy">
+    </div> -->
+
     <div id="btns">
     <button id="encrypt" class="btn btn-crypt" type="button" value="encrypt">Encrypt</button>
     <button class="btn btn-crypt" type="button" value="decrypt">Decrypt</button>
