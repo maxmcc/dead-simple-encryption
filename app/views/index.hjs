@@ -6,10 +6,10 @@
   <title>Dead Simple Encryption</title>
 
   <!--CSS-->
-  <link href='/static/css/normalize.css' rel='stylesheet'>
-  <link href='/static/css/font-awesome.min.css' rel='stylesheet'>
-  <link href='/static/css/tooltipster.css' rel='stylesheet'>
-  <link href='/static/css/main.css' rel='stylesheet'>
+  <link href='/public/css/normalize.css' rel='stylesheet'>
+  <link href='/public/css/font-awesome.min.css' rel='stylesheet'>
+  <link href='/public/css/tooltipster.css' rel='stylesheet'>
+  <link href='/public/css/main.css' rel='stylesheet'>
 </head>
     
 <body>
@@ -30,9 +30,9 @@
     <button class="btn btn-crypt" type="button" value="decrypt">Decrypt</button>
     </div>
     
-    <script src="/static/js/jquery-1.11.1.min.js"></script>
-    <script src="/static/js/dropzone.js"></script>
-    <script src="/static/js/jquery.tooltipster.min.js"></script>
+    <script src="/public/js/jquery-1.11.1.min.js"></script>
+    <script src="/public/js/dropzone.js"></script>
+    <script src="/public/js/jquery.tooltipster.min.js"></script>
     <script>
         // initialize file drop
          Dropzone.options.myDropzone = {
