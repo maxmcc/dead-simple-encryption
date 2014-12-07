@@ -1,11 +1,16 @@
 var path = require('path');
 var logger = require('morgan');
 var express = require('express');
-var bodyParser = require('body-parser');
+var bodyParser = require('body-parser')
 var multer = require('multer'); 
 // var cookieParser = require('cookie-parser');
 // var session = require('cookie-session');
 var app = express();
+
+app.use( bodyParser.json() );       // to support JSON-encoded bodies
+app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+  extended: true
+})); 
 
 app.use('/public/css', express.static(__dirname + '/public/css'));
 app.use('/public/js', express.static(__dirname + '/public/js'));
@@ -38,6 +43,33 @@ app.use(logger('dev'));
 var routes = require('./routes');
 app.use('/', routes);
 
+// handle file uploads
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(multer());
+
+app.post('/upload', function(req, res, next) {
+    res.status(200).end();
+});
+
+app.post('/_upload', function(req, res) {
+  var data = req.body.files;
+
+// var PythonShell = require('python-shell');
+
+// var options = {
+//   mode: 'text',
+//   args: data
+// };
+
+// PythonShell.run('hello.py', function (err, results) {
+//   if (err) throw err;
+//   console.log('results: %j', results);
+// });
+
+  res.status(200).end();
+});
+
 // If no routes activated by now, catch the 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
@@ -52,36 +84,6 @@ app.use(function(err, req, res, next) {
     errorMessage: err.message,
     error: app.get('env') === 'development' ? err : {}
   });
-});
-
-// handle file uploads
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(multer());
-
-// app.post('/upload', function(req, res, next) {
-//     console.log(req.body);
-//     console.log(req.files);
-//     return "Thanks :)";
-// });
-
-app.post('/_upload', function(req, res, next) {
-  var data = req.params.data;
-  console.log(data.users[0]);
-
-// var PythonShell = require('python-shell');
-
-// var options = {
-//   mode: 'text',
-//   args: ['value1', 'value2', 'value3']
-// };
-
-// PythonShell.run('hello.py', function (err, results) {
-//   if (err) throw err;
-//   console.log('results: %j', results);
-// });
-
-  res.send('Thanks!');
 });
 
 // Start listening for requests
