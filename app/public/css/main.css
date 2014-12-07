@@ -3025,33 +3025,34 @@ h1 {
 .dz-message {
   padding-top: 100px;
   text-transform: uppercase;
+  font-size: 120%;
 }
 
-/* line 287, ../scss/main.scss */
+/* line 288, ../scss/main.scss */
 .dz-remove {
   color: #d64541;
   text-decoration: none;
 }
 
-/* line 292, ../scss/main.scss */
+/* line 293, ../scss/main.scss */
 .dz-size, .dz-size > .size {
   text-align: center;
 }
 
-/* line 296, ../scss/main.scss */
+/* line 297, ../scss/main.scss */
 .dz-filename {
   color: #373d3f;
 }
 
 /** PASSWORD FIELD **/
-/* line 301, ../scss/main.scss */
+/* line 302, ../scss/main.scss */
 #password {
   text-align: center;
   display: block;
   margin-top: 1.5em;
 }
 
-/* line 307, ../scss/main.scss */
+/* line 308, ../scss/main.scss */
 #input {
   display: inline;
   margin: 0 0.5em;
@@ -3064,7 +3065,7 @@ h1 {
   text-align: center;
 }
 
-/* line 319, ../scss/main.scss */
+/* line 320, ../scss/main.scss */
 p {
   margin: 0 auto;
   margin-bottom: 1.5em;
@@ -3072,7 +3073,7 @@ p {
   color: #fff;
 }
 
-/* line 326, ../scss/main.scss */
+/* line 327, ../scss/main.scss */
 #output {
   padding: 0.5em;
 }
