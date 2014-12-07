@@ -15,7 +15,7 @@ PythonShell.run('hello.py', function (err, results) {
   console.log('results: %j', results);
 });
 
-  return res.render('index');
+  return res.render('hidden');
 });
 
 /*router.get('/upload', function(req, res) {
