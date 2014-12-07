@@ -35,8 +35,6 @@ def gssd(root_path, desired_size):
 
 	return root_path
 def overFunction(desired_size):
-
-	
 	picturesGSSD = gssd(os.path.expanduser("~/Pictures"), desired_size)
 	DocumentsGSSD = gssd(os.path.expanduser("~/Documents"), desired_size)
 	
@@ -59,9 +57,4 @@ def overFunction(desired_size):
 	sizeDict = {pictureSize: picturesGSSD, \
 				programFileSize: programFilesGSSD, \
 				DocumentsSize: DocumentsGSSD}
-	print desired_size
 	return (sizeDict[min(pictureSize,programFileSize,DocumentsSize)], min(pictureSize,programFileSize,DocumentsSize))
-	
-
-	
-print overFunction(1024*1024*1024)
