@@ -1,6 +1,6 @@
-import os
+"""import os
 import subprocess
-import random
+import random """
 from zipfile import *
 
 
