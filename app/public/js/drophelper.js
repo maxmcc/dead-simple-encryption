@@ -74,7 +74,9 @@ $("#encrypt").click(function() {
 		files: paths,
 	};
 	console.log(data);
-	$.post(url = '/_upload', data = data);
+	$.post(url = '/_upload', data = data, function() {
+		$('[data-remodal-id=modal]').remodal().open();
+     });
 });
 
 

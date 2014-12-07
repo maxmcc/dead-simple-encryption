@@ -10,9 +10,11 @@
   <link href='../public/css/font-awesome.min.css' rel='stylesheet'>
   <link href='../public/css/tooltipster.css' rel='stylesheet'>
   <link href='../public/css/main.css' rel='stylesheet'>
+  <link href="../public/css/jquery.remodal.css" rel='stylesheet'>
 </head>
     
 <body>
+  <div class="remodal-bg">
     <header>
        <i class="fa fa-info-circle fa-lg ketchup tooltip" title="Simply drop your desired files to the designated area and 'Encrypt' will encrypt and disguise your sensitive files as pieces of less suspicious content, such as your family photos or excel documents. 'Decrypt' will restore your hidden files."></i>
     </header>
@@ -38,11 +40,26 @@
     <button class="btn btn-crypt" type="button" value="decrypt">Decrypt</button>
     </div>
     
+  </div>
+
+
+    <div class="remodal" data-remodal-id="modal">
+    <h1>Remodal</h1>
+    <p>
+      Flat, responsive, lightweight, fast, easy customizable modal window plugin
+      with declarative state notation and hash tracking.
+    </p>
+    <br>
+    <a class="remodal-cancel" href="#">Cancel</a>
+    <a class="remodal-confirm" href="#">OK</a>
+    </div>
+    
     <script src="../public/js/jquery-1.11.1.min.js"></script>
     <script src="../public/js/dropzone.js"></script>
     <script src="../public/js/drophelper.js"></script>
     <script src="../public/js/jquery-passy.js"></script>
     <script src="../public/js/jquery.tooltipster.min.js"></script>
+    <script src="../public/js/jquery.remodal.min.js"></script>
     <script>
         $(document).ready(function() {
             $('.tooltip').tooltipster({
