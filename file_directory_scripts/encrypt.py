@@ -1,1 +1,3 @@
-print "encrypt!"
+import zip
+import splitFiles
+import flatten
