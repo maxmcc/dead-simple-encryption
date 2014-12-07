@@ -71,15 +71,15 @@ $("#encrypt").click(function() {
 		}
 	}
 	var data = {
-		files: paths,
+		files: paths
 	};
 	console.log(data);
-	$.post(url = '/_upload', data = data, function() {
+	$.post('/_upload', data, function() {
 		var options = {};
 		var inst = $.remodal.lookup[$('[data-remodal-id=modal]').data('remodal')];
 
-// open the modal
-inst.open();
+        // open the modal
+        inst.open();
      });
 });
 
