@@ -5,7 +5,7 @@ def make_zip(*args):
 		with ZipFile("zippedFiles.zip",'w',allowZip64=True) as zip:
 			zip.write(file)
 	return 1
-		
+
 def unzip(zipfile):
 	zipped = ZipFile(file=zipfile,allowZip64=True)
 	zipped.extractall()
